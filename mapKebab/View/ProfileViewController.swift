@@ -10,7 +10,7 @@ import UIKit
 class ProfileViewController: UIViewController {
     
     //Button - Exit Profile
-    let buttonExit : UIButton = {
+    let buttonExit: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(systemName: "door.left.hand.open"), for: .normal)
         return button
@@ -24,6 +24,7 @@ class ProfileViewController: UIViewController {
     }
     
     func setupView() {
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: buttonExit)
         
     }

@@ -11,6 +11,7 @@
 		09FC31F8292029960080987D /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FC31F7292029960080987D /* FavoritesViewController.swift */; };
 		09FC31FA292029A10080987D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FC31F9292029A10080987D /* ProfileViewController.swift */; };
 		636C0ED82921421600BDC8D5 /* MapboxMaps in Frameworks */ = {isa = PBXBuildFile; productRef = 636C0ED72921421600BDC8D5 /* MapboxMaps */; };
+		636C0EDB292173EE00BDC8D5 /* FavoritiesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636C0EDA292173EE00BDC8D5 /* FavoritiesCollectionViewCell.swift */; };
 		63A7B1BF291FFEA8004FB023 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A7B1BE291FFEA8004FB023 /* AppDelegate.swift */; };
 		63A7B1C1291FFEA8004FB023 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A7B1C0291FFEA8004FB023 /* SceneDelegate.swift */; };
 		63A7B1C3291FFEA8004FB023 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A7B1C2291FFEA8004FB023 /* MainTabBarController.swift */; };
@@ -22,6 +23,7 @@
 		09FC31F5292029750080987D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		09FC31F7292029960080987D /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		09FC31F9292029A10080987D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		636C0EDA292173EE00BDC8D5 /* FavoritiesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritiesCollectionViewCell.swift; sourceTree = "<group>"; };
 		63A7B1BB291FFEA8004FB023 /* mapKebab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mapKebab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63A7B1BE291FFEA8004FB023 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63A7B1C0291FFEA8004FB023 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +52,7 @@
 				09FC31F5292029750080987D /* MapViewController.swift */,
 				09FC31F7292029960080987D /* FavoritesViewController.swift */,
 				09FC31F9292029A10080987D /* ProfileViewController.swift */,
+				636C0ED9292173C000BDC8D5 /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -85,6 +88,14 @@
 				63A7B1C7291FFEAB004FB023 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		636C0ED9292173C000BDC8D5 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				636C0EDA292173EE00BDC8D5 /* FavoritiesCollectionViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		63A7B1B2291FFEA8004FB023 = {
@@ -195,6 +206,7 @@
 				63A7B1C3291FFEA8004FB023 /* MainTabBarController.swift in Sources */,
 				63A7B1BF291FFEA8004FB023 /* AppDelegate.swift in Sources */,
 				63A7B1C1291FFEA8004FB023 /* SceneDelegate.swift in Sources */,
+				636C0EDB292173EE00BDC8D5 /* FavoritiesCollectionViewCell.swift in Sources */,
 				09FC31F8292029960080987D /* FavoritesViewController.swift in Sources */,
 				09FC31F6292029750080987D /* MapViewController.swift in Sources */,
 			);
