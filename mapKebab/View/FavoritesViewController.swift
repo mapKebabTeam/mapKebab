@@ -8,22 +8,78 @@
 import UIKit
 
 class FavoritesViewController: UIViewController {
+    
+    private let favoritesCollectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.backgroundColor = #colorLiteral(red: 0.9813271165, green: 0.9813271165, blue: 0.9813271165, alpha: 1)
+        return collectionView
+    }()
+    
+    private let idFavoritiesCell = "idFavoritiesCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setupView()
+        setConstraints()
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func setupView() {
+        
+        favoritesCollectionView.delegate = self
+        favoritesCollectionView.dataSource = self
+        favoritesCollectionView.register(FavoritiesCollectionViewCell.self,
+                                         forCellWithReuseIdentifier: idFavoritiesCell)
+        
+        title = "Favorities"
+        view.addSubview(favoritesCollectionView)
     }
-    */
 
+}
+
+extension FavoritesViewController {
+    
+    private func setConstraints() {
+        NSLayoutConstraint.activate([
+            favoritesCollectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
+            favoritesCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            favoritesCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            favoritesCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
+        ])
+    }
+    
+}
+
+// - MARK: UITableViewDelegate
+
+extension FavoritesViewController: UICollectionViewDelegate {
+
+    
+}
+
+// - MARK: UITableViewDataSource
+
+extension FavoritesViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width: CGFloat = collectionView.frame.width/1
+        
+        return CGSize(width: width, height: 132)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: idFavoritiesCell, for: indexPath)
+        cell.backgroundColor = .white
+        return cell
+    }
+    
+    
+    
 }
