@@ -8,22 +8,23 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
+    
+    //Button - Exit Profile
+    let buttonExit : UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "door.left.hand.open"), for: .normal)
+        return button
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        setupView()
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setupView() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: buttonExit)
+        
     }
-    */
-
 }
