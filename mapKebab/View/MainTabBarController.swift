@@ -18,11 +18,11 @@ class MainTabBarController: UITabBarController {
     }
     
     private func setupTabBar() {
-        let mapViewController = createNavController(vc: MapViewController(), title: "Map", image: "map", tag: 0)
+        let mapViewController = createNavController(vc: MapViewController(), title: "Map", image: "map.fill", tag: 0)
         let favoritesViewController = createNavController(vc: FavoritesViewController(), title: "Favorites", image: "heart.fill", tag: 1)
-        let profileViewController = createNavController(vc: ProfileViewController(), title: "Profile", image: "person.circle.fill", tag: 2)
+        let welcomeViewController = createNavController(vc: WelcomeViewController(), title: "Profile", image: "person.circle.fill", tag: 2)
         
-        viewControllers = [mapViewController, favoritesViewController, profileViewController]
+        viewControllers = [mapViewController, favoritesViewController, welcomeViewController]
     }
     
     private func createNavController(vc: UIViewController, title: String, image: String, tag: Int) -> UINavigationController {

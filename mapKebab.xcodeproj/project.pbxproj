@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		094588DB29225C8E0092125C /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094588DA29225C8E0092125C /* WelcomeViewController.swift */; };
 		09FC31F6292029750080987D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FC31F5292029750080987D /* MapViewController.swift */; };
 		09FC31F8292029960080987D /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FC31F7292029960080987D /* FavoritesViewController.swift */; };
 		09FC31FA292029A10080987D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FC31F9292029A10080987D /* ProfileViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		094588DA29225C8E0092125C /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		09FC31F5292029750080987D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		09FC31F7292029960080987D /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		09FC31F9292029A10080987D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 				09FC31F5292029750080987D /* MapViewController.swift */,
 				09FC31F7292029960080987D /* FavoritesViewController.swift */,
 				09FC31F9292029A10080987D /* ProfileViewController.swift */,
+				094588DA29225C8E0092125C /* WelcomeViewController.swift */,
 				636C0ED9292173C000BDC8D5 /* Cell */,
 			);
 			path = View;
@@ -221,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				094588DB29225C8E0092125C /* WelcomeViewController.swift in Sources */,
 				09FC31FA292029A10080987D /* ProfileViewController.swift in Sources */,
 				63A7B1C3291FFEA8004FB023 /* MainTabBarController.swift in Sources */,
 				63A7B1BF291FFEA8004FB023 /* AppDelegate.swift in Sources */,

@@ -33,7 +33,7 @@ class FavoritiesCollectionViewCell: UICollectionViewCell {
         let adress = UILabel()
         adress.text = "г. Ульяновск, ул. Гончарова, 31"
         adress.textColor = #colorLiteral(red: 0.6274509804, green: 0.6274509804, blue: 0.6274509804, alpha: 1)
-        adress.font = UIFont.systemFont(ofSize: 11)
+        adress.font = UIFont.systemFont(ofSize: 13)
         adress.translatesAutoresizingMaskIntoConstraints = false
         adress.textAlignment = .left
         return adress
@@ -43,7 +43,7 @@ class FavoritiesCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.text = "пн - пт"
         label.textColor = #colorLiteral(red: 0.6887677908, green: 0.6887677312, blue: 0.6887677312, alpha: 1)
-        label.font = UIFont.systemFont(ofSize: 11)
+        label.font = UIFont.systemFont(ofSize: 13)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -52,7 +52,7 @@ class FavoritiesCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.text = "сб - вс"
         label.textColor = #colorLiteral(red: 0.6887677908, green: 0.6887677312, blue: 0.6887677312, alpha: 1)
-        label.font = UIFont.systemFont(ofSize: 11)
+        label.font = UIFont.systemFont(ofSize: 13)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -132,13 +132,13 @@ extension FavoritiesCollectionViewCell {
         
         self.addSubview(firstStackView)
         NSLayoutConstraint.activate([
-            firstStackView.topAnchor.constraint(equalTo: placeAdress.bottomAnchor, constant: 14),
+            firstStackView.topAnchor.constraint(equalTo: placeAdress.bottomAnchor, constant: 10),
             firstStackView.leadingAnchor.constraint(equalTo: placeImage.trailingAnchor, constant: 14)
         ])
         
         self.addSubview(secondStackView)
         NSLayoutConstraint.activate([
-            secondStackView.topAnchor.constraint(equalTo: placeAdress.bottomAnchor, constant: 14),
+            secondStackView.topAnchor.constraint(equalTo: placeAdress.bottomAnchor, constant: 10),
             secondStackView.leadingAnchor.constraint(equalTo: firstStackView.trailingAnchor, constant: 14)
         ])
     }
