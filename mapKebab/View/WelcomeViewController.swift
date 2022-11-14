@@ -9,25 +9,26 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
     
-    //Image - Logo
-    private let logoImage : UIImageView = {
+    // MARK: - create views for WelcomeViewController
+    
+    private let logoImage: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "logo")
         image.translatesAutoresizingMaskIntoConstraints = false
         image.contentMode = .scaleAspectFill
         return image
     }()
-    
-    private let nameApp : UILabel = {
+
+    private let nameApp: UILabel = {
         let label = UILabel()
         label.text = "mapKebab"
         label.font = UIFont.boldSystemFont(ofSize: 40)
-        label.textColor = #colorLiteral(red: 0.9919832349, green: 0.5759955049, blue: 0.2839201987, alpha: 1)
+        label.textColor = #colorLiteral(red: 0.9921568627, green: 0.5764705882, blue: 0.2823529412, alpha: 1)
         label.textAlignment = .center
         return label
     }()
     
-    private let labelWelcome : UILabel = {
+    private let labelWelcome: UILabel = {
         let label = UILabel()
         label.text = "Добро пожаловать!"
         label.font = UIFont.systemFont(ofSize: 16)
@@ -42,17 +43,16 @@ class WelcomeViewController: UIViewController {
         setupView()
         setConstraints()
         
-        
-        //self.stackView.translatesAutoresizingMaskIntoConstraints = false
     }
     
     private func setupView() {
+        
         title = "Profile"
+        
         view.addSubview(logoImage)
         view.addSubview(nameApp)
         
     }
-
 }
 
 extension WelcomeViewController {
@@ -60,9 +60,8 @@ extension WelcomeViewController {
     private func setConstraints() {
         
         let stackView = UIStackView(arrangedSubviews: [nameApp, labelWelcome], axis: .vertical, spacing: 2, distribution: .equalCentering)
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(stackView)
         
+        view.addSubview(stackView)
         NSLayoutConstraint.activate([
             
             logoImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 25),
@@ -74,7 +73,6 @@ extension WelcomeViewController {
             stackView.centerXAnchor.constraint(equalTo: logoImage.centerXAnchor)
         
         ])
-    }
-    
+    }    
 }
 
