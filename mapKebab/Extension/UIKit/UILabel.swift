@@ -9,6 +9,8 @@ import UIKit
 
 extension UILabel {
     
+    // MARK: - comment
+    
     static func boldTitle(text: String) -> UILabel {
         
         let label = UILabel()
