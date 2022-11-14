@@ -9,15 +9,15 @@ import UIKit
 
 extension UIStackView {
     
-    convenience init(arrangedSubviews: [UIView],
-                     axis: NSLayoutConstraint.Axis,
-                     spacing: CGFloat,
-                     distribution: UIStackView.Distribution) {
+    static func setStackView(axis: NSLayoutConstraint.Axis,
+                             spacing: CGFloat,
+                             distribution: UIStackView.Distribution) -> UIStackView {
         
-        self.init(arrangedSubviews: arrangedSubviews)
-        self.axis = axis
-        self.spacing = spacing
-        self.distribution = distribution
-        self.translatesAutoresizingMaskIntoConstraints = false
+        let stackView = UIStackView()
+        stackView.axis = axis
+        stackView.spacing = spacing
+        stackView.distribution = distribution
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
     }
 }

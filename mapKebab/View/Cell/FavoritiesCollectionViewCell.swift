@@ -19,59 +19,15 @@ class FavoritiesCollectionViewCell: UICollectionViewCell {
         return image
     }()
     
-    private let placeTitle: UILabel = {
-        let title = UILabel.boldTitle(text: "Name Kebab")
-        title.translatesAutoresizingMaskIntoConstraints = false
-        return title
-    }()
+    private let placeTitle = UILabel.boldTitle(text: "Name Kebab")
+    private let placeAdress = UILabel.graySecondary(text: "г. Ульяновск, ул. Гончарова, 31")
+    private let firstDayLabel = UILabel.graySecondary(text: "пн - пт")
+    private let secondDayLabel = UILabel.graySecondary(text: "сб - вс")
+    private let firstTimeLabel = UILabel.blackSecondary(text: "10:00 - 20:00")
+    private let secondTimeLabel = UILabel.blackSecondary(text: "12:00 - 01:00")
     
-    private let placeAdress: UILabel = {
-        let adress = UILabel.graySecondary(text: "г. Ульяновск, ул. Гончарова, 31")
-        adress.translatesAutoresizingMaskIntoConstraints = false
-        return adress
-    }()
-    
-    private let firstDayLabel: UILabel = {
-        let label = UILabel.graySecondary(text: "пн - пт")
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    private let secondDayLabel: UILabel = {
-        let label = UILabel.graySecondary(text: "сб - вс")
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    private let firstTimeLabel: UILabel = {
-        let label = UILabel.blackSecondary(text: "10:00 - 20:00")
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    private let secondTimeLabel: UILabel = {
-        let label = UILabel.blackSecondary(text: "12:00 - 01:00")
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    private let firstStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.spacing = 2
-        stackView.axis = .vertical
-        stackView.distribution = .equalCentering
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-       return stackView
-    }()
-    
-    private let secondStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.spacing = 2
-        stackView.axis = .vertical
-        stackView.distribution = .equalCentering
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-       return stackView
-    }()
+    private let firstStackView = UIStackView.setStackView(axis: .vertical, spacing: 2, distribution: .equalCentering)
+    private let secondStackView = UIStackView.setStackView(axis: .vertical, spacing: 2, distribution: .equalCentering)
     
 
     override init(frame: CGRect) {
@@ -101,14 +57,7 @@ class FavoritiesCollectionViewCell: UICollectionViewCell {
         [secondDayLabel, secondTimeLabel].forEach { view in
             secondStackView.addArrangedSubview(view)
         }
-
-        
     }
-}
-
-extension FavoritiesCollectionViewCell {
-    
-    // MARK: - constraints for image, title and adress
     
     private func setConstaints() {
         
@@ -135,28 +84,4 @@ extension FavoritiesCollectionViewCell {
             
         ])
     }
-    
 }
-    
-//    // MARK: - constraints for StackView
-//
-//    private func setStackViewConstraint() {
-//
-////        let firstStackView = UIStackView(arrangedSubviews: [firstDayLabel, firstTimeLabel], axis: .vertical, spacing: 2, distribution: .equalCentering)
-////
-////        let secondStackView = UIStackView(arrangedSubviews: [secondDayLabel, secondTimeLabel], axis: .vertical, spacing: 2, distribution: .equalCentering)
-//
-//        self.addSubview(firstStackView)
-//        NSLayoutConstraint.activate([
-//            firstStackView.topAnchor.constraint(equalTo: placeAdress.bottomAnchor, constant: 10),
-//            firstStackView.leadingAnchor.constraint(equalTo: placeImage.trailingAnchor, constant: 14)
-//        ])
-//
-//        self.addSubview(secondStackView)
-//        NSLayoutConstraint.activate([
-//            secondStackView.topAnchor.constraint(equalTo: placeAdress.bottomAnchor, constant: 10),
-//            secondStackView.leadingAnchor.constraint(equalTo: firstStackView.trailingAnchor, constant: 14)
-//        ])
-//    }
-//
-//}

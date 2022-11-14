@@ -31,6 +31,7 @@ class MainTabBarController: UITabBarController {
         navController.tabBarItem = item
         
         tabBar.backgroundColor = .white
+        tabBar.tintColor = #colorLiteral(red: 0.9921568627, green: 0.5764705882, blue: 0.2823529412, alpha: 1)
         
         return navController
     }

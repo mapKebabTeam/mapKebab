@@ -9,23 +9,19 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
-    //Button - Exit Profile
-    let buttonExit: UIButton = {
-        let button = UIButton()
-        button.setImage(UIImage(systemName: "door.left.hand.open"), for: .normal)
-        return button
-    }()
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupView()
+        setConstraints()
         
     }
     
-    func setupView() {
+    private func setupView() {
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: buttonExit)
+    }
+    
+    private func setConstraints() {
         
     }
 }

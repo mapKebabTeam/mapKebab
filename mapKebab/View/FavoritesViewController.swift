@@ -44,7 +44,7 @@ extension FavoritesViewController {
     
     private func setConstraints() {
         NSLayoutConstraint.activate([
-            favoritesCollectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
+            favoritesCollectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 12),
             favoritesCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
             favoritesCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
             favoritesCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
@@ -79,7 +79,5 @@ extension FavoritesViewController: UICollectionViewDataSource, UICollectionViewD
         cell.backgroundColor = .white
         return cell
     }
-    
-    
     
 }
