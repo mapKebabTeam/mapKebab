@@ -9,6 +9,9 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
     
+    private var table = ["Служба поддержки", "О приложении"]
+    private var idWelcomeCell = "idWelcomeCell"
+    
     // MARK: - create views for WelcomeViewController
     
     private let logoImage: UIImageView = {
@@ -61,7 +64,16 @@ class WelcomeViewController: UIViewController {
         button.addTarget(self, action: #selector(joinButtonTapped), for: .touchUpInside)
         return button
     }()
-
+    
+    private let tableView : UITableView = {
+        let table = UITableView(frame: .zero, style: .plain)
+        table.rowHeight = 50
+        table.isScrollEnabled = false
+        table.backgroundColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)
+        table.translatesAutoresizingMaskIntoConstraints = false
+        return table
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -77,11 +89,17 @@ class WelcomeViewController: UIViewController {
     private func setupView() {
         
         title = "Profile"
+        view.backgroundColor = #colorLiteral(red: 0.9813271165, green: 0.9813271165, blue: 0.9813271165, alpha: 1)
         
         view.addSubview(logoImage)
         view.addSubview(stackView)
         view.addSubview(subTitleLabel)
         view.addSubview(joinButton)
+        view.addSubview(tableView)
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: idWelcomeCell)
         
         [nameApp, labelWelcome].forEach { view in
             stackView.addArrangedSubview(view)
@@ -107,9 +125,29 @@ class WelcomeViewController: UIViewController {
             joinButton.topAnchor.constraint(equalTo: subTitleLabel.bottomAnchor, constant: 22),
             joinButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             joinButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            joinButton.heightAnchor.constraint(equalToConstant: 48)
+            joinButton.heightAnchor.constraint(equalToConstant: 48),
+            
+            tableView.topAnchor.constraint(equalTo: joinButton.bottomAnchor, constant: 42),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            //tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            tableView.heightAnchor.constraint(equalTo: view.heightAnchor)
         
         ])
+    }
+}
+
+extension WelcomeViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return table.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: idWelcomeCell, for: indexPath)
+        let table = table[indexPath.row]
+        cell.textLabel?.text = table
+        return cell
     }
 }
 
