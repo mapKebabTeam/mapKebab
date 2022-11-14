@@ -36,13 +36,22 @@ class WelcomeViewController: UIViewController {
         label.textAlignment = .center
         return label
     }()
+    
+    private let stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.spacing = 2
+        stackView.axis = .vertical
+        stackView.distribution = .equalCentering
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupView()
         setConstraints()
-        
+ 
     }
     
     private func setupView() {
@@ -50,18 +59,14 @@ class WelcomeViewController: UIViewController {
         title = "Profile"
         
         view.addSubview(logoImage)
-        view.addSubview(nameApp)
-        
+        view.addSubview(stackView)
+        [nameApp, labelWelcome].forEach { view in
+            stackView.addArrangedSubview(view)
+        }
     }
-}
-
-extension WelcomeViewController {
     
     private func setConstraints() {
         
-        let stackView = UIStackView(arrangedSubviews: [nameApp, labelWelcome], axis: .vertical, spacing: 2, distribution: .equalCentering)
-        
-        view.addSubview(stackView)
         NSLayoutConstraint.activate([
             
             logoImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 25),
@@ -73,6 +78,6 @@ extension WelcomeViewController {
             stackView.centerXAnchor.constraint(equalTo: logoImage.centerXAnchor)
         
         ])
-    }    
+    }
 }
 

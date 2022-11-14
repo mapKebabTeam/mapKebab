@@ -20,59 +20,57 @@ class FavoritiesCollectionViewCell: UICollectionViewCell {
     }()
     
     private let placeTitle: UILabel = {
-        let title = UILabel()
-        title.text = "Name Kebab"
-        title.textColor = #colorLiteral(red: 0.2030155063, green: 0.2030155063, blue: 0.2030155063, alpha: 1)
-        title.font = UIFont.boldSystemFont(ofSize: 19)
+        let title = UILabel.boldTitle(text: "Name Kebab")
         title.translatesAutoresizingMaskIntoConstraints = false
-        title.textAlignment = .left
         return title
     }()
     
     private let placeAdress: UILabel = {
-        let adress = UILabel()
-        adress.text = "г. Ульяновск, ул. Гончарова, 31"
-        adress.textColor = #colorLiteral(red: 0.6274509804, green: 0.6274509804, blue: 0.6274509804, alpha: 1)
-        adress.font = UIFont.systemFont(ofSize: 13)
+        let adress = UILabel.graySecondary(text: "г. Ульяновск, ул. Гончарова, 31")
         adress.translatesAutoresizingMaskIntoConstraints = false
-        adress.textAlignment = .left
         return adress
     }()
     
     private let firstDayLabel: UILabel = {
-        let label = UILabel()
-        label.text = "пн - пт"
-        label.textColor = #colorLiteral(red: 0.6887677908, green: 0.6887677312, blue: 0.6887677312, alpha: 1)
-        label.font = UIFont.systemFont(ofSize: 13)
+        let label = UILabel.graySecondary(text: "пн - пт")
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     private let secondDayLabel: UILabel = {
-        let label = UILabel()
-        label.text = "сб - вс"
-        label.textColor = #colorLiteral(red: 0.6887677908, green: 0.6887677312, blue: 0.6887677312, alpha: 1)
-        label.font = UIFont.systemFont(ofSize: 13)
+        let label = UILabel.graySecondary(text: "сб - вс")
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     private let firstTimeLabel: UILabel = {
-        let label = UILabel()
-        label.text = "10:00 - 20:00"
-        label.textColor = #colorLiteral(red: 0.1529411765, green: 0.1529411765, blue: 0.1529411765, alpha: 1)
-        label.font = UIFont.systemFont(ofSize: 13)
+        let label = UILabel.blackSecondary(text: "10:00 - 20:00")
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     private let secondTimeLabel: UILabel = {
-        let label = UILabel()
-        label.text = "12:00 - 01:00"
-        label.textColor = #colorLiteral(red: 0.1529411765, green: 0.1529411765, blue: 0.1529411765, alpha: 1)
-        label.font = UIFont.systemFont(ofSize: 13)
+        let label = UILabel.blackSecondary(text: "12:00 - 01:00")
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
+    }()
+    
+    private let firstStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.spacing = 2
+        stackView.axis = .vertical
+        stackView.distribution = .equalCentering
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+       return stackView
+    }()
+    
+    private let secondStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.spacing = 2
+        stackView.axis = .vertical
+        stackView.distribution = .equalCentering
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+       return stackView
     }()
     
 
@@ -81,7 +79,7 @@ class FavoritiesCollectionViewCell: UICollectionViewCell {
         
         setupView()
         setConstaints()
-        setStackViewConstraint()
+        
     }
     
     required init?(coder: NSCoder) {
@@ -93,6 +91,17 @@ class FavoritiesCollectionViewCell: UICollectionViewCell {
         addSubview(placeImage)
         addSubview(placeTitle)
         addSubview(placeAdress)
+        addSubview(firstStackView)
+        addSubview(secondStackView)
+        
+        [firstDayLabel, firstTimeLabel].forEach { view in
+            firstStackView.addArrangedSubview(view)
+        }
+        
+        [secondDayLabel, secondTimeLabel].forEach { view in
+            secondStackView.addArrangedSubview(view)
+        }
+
         
     }
 }
@@ -118,29 +127,36 @@ extension FavoritiesCollectionViewCell {
             placeAdress.leadingAnchor.constraint(equalTo: placeImage.trailingAnchor, constant: 14),
             placeAdress.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -14),
             
+            firstStackView.topAnchor.constraint(equalTo: placeAdress.bottomAnchor, constant: 10),
+            firstStackView.leadingAnchor.constraint(equalTo: placeImage.trailingAnchor, constant: 14),
+            
+            secondStackView.topAnchor.constraint(equalTo: placeAdress.bottomAnchor, constant: 10),
+            secondStackView.leadingAnchor.constraint(equalTo: firstStackView.trailingAnchor, constant: 14)
             
         ])
     }
     
-    // MARK: - constraints for StackView
-    
-    private func setStackViewConstraint() {
-        
-        let firstStackView = UIStackView(arrangedSubviews: [firstDayLabel, firstTimeLabel], axis: .vertical, spacing: 2, distribution: .equalCentering)
-        
-        let secondStackView = UIStackView(arrangedSubviews: [secondDayLabel, secondTimeLabel], axis: .vertical, spacing: 2, distribution: .equalCentering)
-        
-        self.addSubview(firstStackView)
-        NSLayoutConstraint.activate([
-            firstStackView.topAnchor.constraint(equalTo: placeAdress.bottomAnchor, constant: 10),
-            firstStackView.leadingAnchor.constraint(equalTo: placeImage.trailingAnchor, constant: 14)
-        ])
-        
-        self.addSubview(secondStackView)
-        NSLayoutConstraint.activate([
-            secondStackView.topAnchor.constraint(equalTo: placeAdress.bottomAnchor, constant: 10),
-            secondStackView.leadingAnchor.constraint(equalTo: firstStackView.trailingAnchor, constant: 14)
-        ])
-    }
-    
 }
+    
+//    // MARK: - constraints for StackView
+//
+//    private func setStackViewConstraint() {
+//
+////        let firstStackView = UIStackView(arrangedSubviews: [firstDayLabel, firstTimeLabel], axis: .vertical, spacing: 2, distribution: .equalCentering)
+////
+////        let secondStackView = UIStackView(arrangedSubviews: [secondDayLabel, secondTimeLabel], axis: .vertical, spacing: 2, distribution: .equalCentering)
+//
+//        self.addSubview(firstStackView)
+//        NSLayoutConstraint.activate([
+//            firstStackView.topAnchor.constraint(equalTo: placeAdress.bottomAnchor, constant: 10),
+//            firstStackView.leadingAnchor.constraint(equalTo: placeImage.trailingAnchor, constant: 14)
+//        ])
+//
+//        self.addSubview(secondStackView)
+//        NSLayoutConstraint.activate([
+//            secondStackView.topAnchor.constraint(equalTo: placeAdress.bottomAnchor, constant: 10),
+//            secondStackView.leadingAnchor.constraint(equalTo: firstStackView.trailingAnchor, constant: 14)
+//        ])
+//    }
+//
+//}
