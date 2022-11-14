@@ -10,6 +10,7 @@
 		09FC31F6292029750080987D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FC31F5292029750080987D /* MapViewController.swift */; };
 		09FC31F8292029960080987D /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FC31F7292029960080987D /* FavoritesViewController.swift */; };
 		09FC31FA292029A10080987D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FC31F9292029A10080987D /* ProfileViewController.swift */; };
+		636197CF29224BF90080E32C /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636197CE29224BF90080E32C /* UIStackView.swift */; };
 		636C0ED82921421600BDC8D5 /* MapboxMaps in Frameworks */ = {isa = PBXBuildFile; productRef = 636C0ED72921421600BDC8D5 /* MapboxMaps */; };
 		636C0EDB292173EE00BDC8D5 /* FavoritiesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636C0EDA292173EE00BDC8D5 /* FavoritiesCollectionViewCell.swift */; };
 		63A7B1BF291FFEA8004FB023 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A7B1BE291FFEA8004FB023 /* AppDelegate.swift */; };
@@ -23,6 +24,7 @@
 		09FC31F5292029750080987D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		09FC31F7292029960080987D /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		09FC31F9292029A10080987D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		636197CE29224BF90080E32C /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
 		636C0EDA292173EE00BDC8D5 /* FavoritiesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritiesCollectionViewCell.swift; sourceTree = "<group>"; };
 		63A7B1BB291FFEA8004FB023 /* mapKebab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mapKebab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63A7B1BE291FFEA8004FB023 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +92,22 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		636197C82922492F0080E32C /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				636197CD29224BE80080E32C /* UIKit */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		636197CD29224BE80080E32C /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				636197CE29224BF90080E32C /* UIStackView.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
 		636C0ED9292173C000BDC8D5 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +135,7 @@
 		63A7B1BD291FFEA8004FB023 /* mapKebab */ = {
 			isa = PBXGroup;
 			children = (
+				636197C82922492F0080E32C /* Extension */,
 				09FC31F2292007020080987D /* Model */,
 				09FC31F1292006CD0080987D /* ViewModel */,
 				09FC31F0292006BF0080987D /* View */,
@@ -205,6 +224,7 @@
 				09FC31FA292029A10080987D /* ProfileViewController.swift in Sources */,
 				63A7B1C3291FFEA8004FB023 /* MainTabBarController.swift in Sources */,
 				63A7B1BF291FFEA8004FB023 /* AppDelegate.swift in Sources */,
+				636197CF29224BF90080E32C /* UIStackView.swift in Sources */,
 				63A7B1C1291FFEA8004FB023 /* SceneDelegate.swift in Sources */,
 				636C0EDB292173EE00BDC8D5 /* FavoritiesCollectionViewCell.swift in Sources */,
 				09FC31F8292029960080987D /* FavoritesViewController.swift in Sources */,

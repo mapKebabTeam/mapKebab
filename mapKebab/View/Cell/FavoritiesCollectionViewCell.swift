@@ -38,12 +38,50 @@ class FavoritiesCollectionViewCell: UICollectionViewCell {
         adress.textAlignment = .left
         return adress
     }()
+    
+    private let firstDayLabel: UILabel = {
+        let label = UILabel()
+        label.text = "пн - пт"
+        label.textColor = #colorLiteral(red: 0.6887677908, green: 0.6887677312, blue: 0.6887677312, alpha: 1)
+        label.font = UIFont.systemFont(ofSize: 11)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private let secondDayLabel: UILabel = {
+        let label = UILabel()
+        label.text = "сб - вс"
+        label.textColor = #colorLiteral(red: 0.6887677908, green: 0.6887677312, blue: 0.6887677312, alpha: 1)
+        label.font = UIFont.systemFont(ofSize: 11)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private let firstTimeLabel: UILabel = {
+        let label = UILabel()
+        label.text = "10:00 - 20:00"
+        label.textColor = #colorLiteral(red: 0.1529411765, green: 0.1529411765, blue: 0.1529411765, alpha: 1)
+        label.font = UIFont.systemFont(ofSize: 13)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private let secondTimeLabel: UILabel = {
+        let label = UILabel()
+        label.text = "12:00 - 01:00"
+        label.textColor = #colorLiteral(red: 0.1529411765, green: 0.1529411765, blue: 0.1529411765, alpha: 1)
+        label.font = UIFont.systemFont(ofSize: 13)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         setupView()
         setConstaints()
+        setStackViewConstraint()
     }
     
     required init?(coder: NSCoder) {
@@ -61,7 +99,10 @@ class FavoritiesCollectionViewCell: UICollectionViewCell {
 
 extension FavoritiesCollectionViewCell {
     
+    // MARK: - constraints for image, title and adress
+    
     private func setConstaints() {
+        
         NSLayoutConstraint.activate([
             
             placeImage.topAnchor.constraint(equalTo: topAnchor, constant: 16),
@@ -77,6 +118,28 @@ extension FavoritiesCollectionViewCell {
             placeAdress.leadingAnchor.constraint(equalTo: placeImage.trailingAnchor, constant: 14),
             placeAdress.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -14),
             
+            
+        ])
+    }
+    
+    // MARK: - constraints for StackView
+    
+    private func setStackViewConstraint() {
+        
+        let firstStackView = UIStackView(arrangedSubviews: [firstDayLabel, firstTimeLabel], axis: .vertical, spacing: 2, distribution: .equalCentering)
+        
+        let secondStackView = UIStackView(arrangedSubviews: [secondDayLabel, secondTimeLabel], axis: .vertical, spacing: 2, distribution: .equalCentering)
+        
+        self.addSubview(firstStackView)
+        NSLayoutConstraint.activate([
+            firstStackView.topAnchor.constraint(equalTo: placeAdress.bottomAnchor, constant: 14),
+            firstStackView.leadingAnchor.constraint(equalTo: placeImage.trailingAnchor, constant: 14)
+        ])
+        
+        self.addSubview(secondStackView)
+        NSLayoutConstraint.activate([
+            secondStackView.topAnchor.constraint(equalTo: placeAdress.bottomAnchor, constant: 14),
+            secondStackView.leadingAnchor.constraint(equalTo: firstStackView.trailingAnchor, constant: 14)
         ])
     }
     
