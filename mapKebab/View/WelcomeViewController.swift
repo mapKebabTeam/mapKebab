@@ -65,7 +65,7 @@ class WelcomeViewController: UIViewController {
         return button
     }()
     
-    private let tableView : UITableView = {
+    private let tableView: UITableView = {
         let table = UITableView(frame: .zero, style: .plain)
         table.rowHeight = 50
         table.isScrollEnabled = false
@@ -83,7 +83,8 @@ class WelcomeViewController: UIViewController {
     }
     
     @objc private func joinButtonTapped() {
-        print("tap")
+        let registerViewController = RegisterViewController()
+        navigationController?.pushViewController(registerViewController, animated: true)
     }
     
     private func setupView() {
@@ -130,12 +131,13 @@ class WelcomeViewController: UIViewController {
             tableView.topAnchor.constraint(equalTo: joinButton.bottomAnchor, constant: 42),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            //tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            tableView.heightAnchor.constraint(equalTo: view.heightAnchor)
+            tableView.heightAnchor.constraint(equalToConstant: 100)
         
         ])
     }
 }
+
+// MARK: - UITableViewDelegate, UITableViewDataSource
 
 extension WelcomeViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -147,6 +149,7 @@ extension WelcomeViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: idWelcomeCell, for: indexPath)
         let table = table[indexPath.row]
         cell.textLabel?.text = table
+        cell.accessoryType = .disclosureIndicator
         return cell
     }
 }

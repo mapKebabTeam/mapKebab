@@ -15,6 +15,7 @@
 		636197D12922B6310080E32C /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636197D02922B6310080E32C /* UILabel.swift */; };
 		636C0ED82921421600BDC8D5 /* MapboxMaps in Frameworks */ = {isa = PBXBuildFile; productRef = 636C0ED72921421600BDC8D5 /* MapboxMaps */; };
 		636C0EDB292173EE00BDC8D5 /* FavoritiesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636C0EDA292173EE00BDC8D5 /* FavoritiesCollectionViewCell.swift */; };
+		639536B22923873200B15476 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639536B12923873200B15476 /* RegisterViewController.swift */; };
 		63A7B1BF291FFEA8004FB023 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A7B1BE291FFEA8004FB023 /* AppDelegate.swift */; };
 		63A7B1C1291FFEA8004FB023 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A7B1C0291FFEA8004FB023 /* SceneDelegate.swift */; };
 		63A7B1C3291FFEA8004FB023 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A7B1C2291FFEA8004FB023 /* MainTabBarController.swift */; };
@@ -30,6 +31,7 @@
 		636197CE29224BF90080E32C /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
 		636197D02922B6310080E32C /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		636C0EDA292173EE00BDC8D5 /* FavoritiesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritiesCollectionViewCell.swift; sourceTree = "<group>"; };
+		639536B12923873200B15476 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		63A7B1BB291FFEA8004FB023 /* mapKebab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mapKebab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63A7B1BE291FFEA8004FB023 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63A7B1C0291FFEA8004FB023 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				09FC31F7292029960080987D /* FavoritesViewController.swift */,
 				09FC31F9292029A10080987D /* ProfileViewController.swift */,
 				094588DA29225C8E0092125C /* WelcomeViewController.swift */,
+				639536B12923873200B15476 /* RegisterViewController.swift */,
 				636C0ED9292173C000BDC8D5 /* Cell */,
 			);
 			path = View;
@@ -228,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				636197D12922B6310080E32C /* UILabel.swift in Sources */,
+				639536B22923873200B15476 /* RegisterViewController.swift in Sources */,
 				094588DB29225C8E0092125C /* WelcomeViewController.swift in Sources */,
 				09FC31FA292029A10080987D /* ProfileViewController.swift in Sources */,
 				63A7B1C3291FFEA8004FB023 /* MainTabBarController.swift in Sources */,
