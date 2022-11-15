@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+//коммент
 class WelcomeViewController: UIViewController {
     
     private var table = ["Служба поддержки", "О приложении"]
