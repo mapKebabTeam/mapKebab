@@ -60,11 +60,11 @@ class WelcomeViewController: UIViewController {
         button.titleLabel?.textColor = .white
         button.titleLabel?.font = UIFont.systemFont(ofSize: 15)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(WelcomeViewController.self, action: #selector(joinButtonTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(joinButtonTapped), for: .touchUpInside)
         return button
     }()
     
-    private let tableView : UITableView = {
+    private let tableView: UITableView = {
         let table = UITableView(frame: .zero, style: .plain)
         table.rowHeight = UITableView.automaticDimension
         table.isScrollEnabled = false
@@ -72,6 +72,7 @@ class WelcomeViewController: UIViewController {
         table.translatesAutoresizingMaskIntoConstraints = false
         return table
     }()
+    
     //lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,9 +88,12 @@ class WelcomeViewController: UIViewController {
             tableView.deselectRow(at: indexPath, animated: true)
         }
     }
+    
     //funcs
+    
     @objc private func joinButtonTapped() {
-        print("tap")
+        let registerViewController = RegisterViewController()
+        navigationController?.pushViewController(registerViewController, animated: true)
     }
     
     private func setupView() {
@@ -151,6 +155,7 @@ class WelcomeViewController: UIViewController {
     }
     
 }
+
 //Delegate&DataSource
 extension WelcomeViewController: UITableViewDelegate, UITableViewDataSource {
     
