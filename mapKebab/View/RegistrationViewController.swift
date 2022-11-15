@@ -97,7 +97,8 @@ class RegistrationViewController: UIViewController {
             
             registrationTextFieldStackView.topAnchor.constraint(equalTo: registrationLabelStackView.bottomAnchor, constant: 56),
             registrationTextFieldStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            registrationTextFieldStackView.trailingAnchor.constraint(equalTo: view.leadingAnchor, constant: -16)
+            registrationTextFieldStackView.trailingAnchor.constraint(equalTo: view.leadingAnchor, constant: -16),
+            registrationLabelStackView.heightAnchor.constraint(equalToConstant: 176)
             
         ])
     }

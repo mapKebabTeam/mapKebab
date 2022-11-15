@@ -20,6 +20,12 @@ class AuthorizationViewController: UIViewController {
         return label
     }()
     
+    private let authorizationButton : UIButton = {
+        let button = UIButton.primaryButton(text: "Sign In")
+        button.addTarget(self, action: #selector(authorizationButtonPush), for: .touchUpInside)
+        return button
+    }()
+    
     private let emailTextField = UITextField.setTextField(placeholder: "E-mail")
     private let passwordTextField : UITextField = {
         let tf = UITextField.setTextField(placeholder: "Password")
@@ -46,6 +52,7 @@ class AuthorizationViewController: UIViewController {
     private func setupView() {
         view.addSubview(authorizationStackView)
         view.addSubview(labelStackView)
+        view.addSubview(authorizationButton)
         
         emailTextField.delegate = self
         passwordTextField.delegate = self
@@ -96,7 +103,18 @@ class AuthorizationViewController: UIViewController {
             authorizationStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             authorizationStackView.heightAnchor.constraint(equalToConstant: 112),
             
+            authorizationButton.topAnchor.constraint(equalTo: authorizationStackView.bottomAnchor, constant: 32),
+            authorizationButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            authorizationButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            authorizationButton.heightAnchor.constraint(equalToConstant: 48),
+            
         ])
+    }
+    
+    @objc func authorizationButtonPush() {
+        let registrationViewController = RegistrationViewController()
+        navigationController?.pushViewController(registrationViewController, animated: true)
+        registrationViewController.hidesBottomBarWhenPushed = true
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
