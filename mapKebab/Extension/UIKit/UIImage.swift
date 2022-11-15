@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+//тест
 extension UIImage {
     
     static var map: UIImage {
