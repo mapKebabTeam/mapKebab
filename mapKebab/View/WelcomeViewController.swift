@@ -13,6 +13,7 @@ class WelcomeViewController: UIViewController {
     
     // MARK: - create views for WelcomeViewController
     //props
+    
     private let logoImage: UIImageView = {
         let image = UIImageView()
         image.image = UIImage.logo
