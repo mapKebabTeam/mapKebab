@@ -45,6 +45,7 @@ extension UILabel {
         label.text = text
         label.font = UIFont.boldSystemFont(ofSize: 23)
         label.textColor = color
+        label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }
@@ -55,6 +56,7 @@ extension UILabel {
         label.text = text
         label.font = UIFont.systemFont(ofSize: 15)
         label.textColor = color
+        label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }
