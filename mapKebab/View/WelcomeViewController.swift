@@ -92,8 +92,8 @@ class WelcomeViewController: UIViewController {
     //funcs
     
     @objc private func joinButtonTapped() {
-        let registerViewController = RegisterViewController()
-        navigationController?.pushViewController(registerViewController, animated: true)
+        let AuthorizationViewController = AuthorizationViewController()
+        navigationController?.pushViewController(AuthorizationViewController, animated: true)
     }
     
     private func setupView() {
