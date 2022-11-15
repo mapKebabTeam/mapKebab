@@ -18,15 +18,15 @@ class MainTabBarController: UITabBarController {
     }
     
     private func setupTabBar() {
-        let mapViewController = createNavController(vc: MapViewController(), title: "Map", image: "map.fill", tag: 0)
-        let favoritesViewController = createNavController(vc: FavoritesViewController(), title: "Favorites", image: "heart.fill", tag: 1)
-        let welcomeViewController = createNavController(vc: WelcomeViewController(), title: "Profile", image: "person.circle.fill", tag: 2)
+        let mapViewController = createNavController(vc: MapViewController(), title: "Map", image: UIImage.map, tag: 0)
+        let favoritesViewController = createNavController(vc: FavoritesViewController(), title: "Favorites", image: UIImage.favorites, tag: 1)
+        let welcomeViewController = createNavController(vc: WelcomeViewController(), title: "Profile", image: UIImage.profile, tag: 2)
         
         viewControllers = [mapViewController, favoritesViewController, welcomeViewController]
     }
     
-    private func createNavController(vc: UIViewController, title: String, image: String, tag: Int) -> UINavigationController {
-        let item = UITabBarItem(title: title, image: UIImage(systemName: image), tag: tag)
+    private func createNavController(vc: UIViewController, title: String, image: UIImage, tag: Int) -> UINavigationController {
+        let item = UITabBarItem(title: title, image: image, tag: tag)
         let navController = UINavigationController(rootViewController: vc)
         navController.tabBarItem = item
         
@@ -37,4 +37,5 @@ class MainTabBarController: UITabBarController {
     }
 
 }
+
 

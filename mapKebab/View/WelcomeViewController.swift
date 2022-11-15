@@ -6,17 +6,16 @@
 //
 
 import UIKit
-//коммент
+
 class WelcomeViewController: UIViewController {
     
     private var table = ["Служба поддержки", "О приложении"]
-    private var idWelcomeCell = "idWelcomeCell"
     
     // MARK: - create views for WelcomeViewController
-    
+    //props
     private let logoImage: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: "logo")
+        image.image = UIImage.logo
         image.translatesAutoresizingMaskIntoConstraints = false
         image.contentMode = .scaleAspectFill
         return image
@@ -61,30 +60,36 @@ class WelcomeViewController: UIViewController {
         button.titleLabel?.textColor = .white
         button.titleLabel?.font = UIFont.systemFont(ofSize: 15)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(joinButtonTapped), for: .touchUpInside)
+        button.addTarget(WelcomeViewController.self, action: #selector(joinButtonTapped), for: .touchUpInside)
         return button
     }()
     
-    private let tableView: UITableView = {
+    private let tableView : UITableView = {
         let table = UITableView(frame: .zero, style: .plain)
-        table.rowHeight = 50
+        table.rowHeight = UITableView.automaticDimension
         table.isScrollEnabled = false
-        table.backgroundColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)
+        table.backgroundColor = .clear
         table.translatesAutoresizingMaskIntoConstraints = false
         return table
     }()
-    
+    //lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupView()
         setConstraints()
- 
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        ///на будущее: снимать выделение ячейки красивее после появления исходного контроллера вновь. Это пригодится, когда будут экраны, соответствующие ячейкам таблицы
+        if let indexPath = tableView.indexPathForSelectedRow {
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
+    }
+    //funcs
     @objc private func joinButtonTapped() {
-        let registerViewController = RegisterViewController()
-        navigationController?.pushViewController(registerViewController, animated: true)
+        print("tap")
     }
     
     private func setupView() {
@@ -100,7 +105,6 @@ class WelcomeViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: idWelcomeCell)
         
         [nameApp, labelWelcome].forEach { view in
             stackView.addArrangedSubview(view)
@@ -131,14 +135,23 @@ class WelcomeViewController: UIViewController {
             tableView.topAnchor.constraint(equalTo: joinButton.bottomAnchor, constant: 42),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tableView.heightAnchor.constraint(equalToConstant: 100)
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         
         ])
     }
+    
+    private func configure(cell: inout UITableViewCell, for indexPath: IndexPath) {
+        var config = cell.defaultContentConfiguration()
+        config.text = table[indexPath.row]
+        cell.contentConfiguration = config
+        cell.accessoryType = .disclosureIndicator
+        if indexPath.row == table.count-1 {///убираем сепаратор с последней ячейки
+            cell.separatorInset.left = tableView.bounds.width
+        }
+    }
+    
 }
-
-// MARK: - UITableViewDelegate, UITableViewDataSource
-
+//Delegate&DataSource
 extension WelcomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -146,10 +159,8 @@ extension WelcomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: idWelcomeCell, for: indexPath)
-        let table = table[indexPath.row]
-        cell.textLabel?.text = table
-        cell.accessoryType = .disclosureIndicator
+        var cell = UITableViewCell()///реюзабл здесь не нужен, тк таблица недостаточно большая, чтобы ячейки скроллились за пределы экрана
+        configure(cell: &cell, for: indexPath)
         return cell
     }
 }
