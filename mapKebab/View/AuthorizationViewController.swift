@@ -9,6 +9,16 @@ import UIKit
 
 class AuthorizationViewController: UIViewController {
     
+    private let authorizationLabel : UILabel = {
+        let label = UILabel.mainTitle(text: "Authorization", color: #colorLiteral(red: 0.2030155063, green: 0.2030155063, blue: 0.2030155063, alpha: 1))
+        label.textAlignment = .center
+        return label
+    }()
+    private let baseLabel : UILabel = {
+        let label = UILabel.baseFont(text: "To enter your profile, enter the data", color: #colorLiteral(red: 0.6887677908, green: 0.6887677312, blue: 0.6887677312, alpha: 1))
+        label.textAlignment = .center
+        return label
+    }()
     
     private let emailTextField = UITextField.setTextField(placeholder: "E-mail")
     private let passwordTextField : UITextField = {
@@ -17,6 +27,7 @@ class AuthorizationViewController: UIViewController {
         return tf
     }()
     
+    private let labelStackView = UIStackView.setStackView(axis: .vertical, spacing: 6, distribution: .equalCentering)
     private let authorizationStackView = UIStackView.setStackView(axis: .vertical, spacing: 16, distribution: .fillEqually)
     
     override func viewDidLoad() {
@@ -33,8 +44,8 @@ class AuthorizationViewController: UIViewController {
     }
     
     private func setupView() {
-        
         view.addSubview(authorizationStackView)
+        view.addSubview(labelStackView)
         
         emailTextField.delegate = self
         passwordTextField.delegate = self
@@ -42,10 +53,11 @@ class AuthorizationViewController: UIViewController {
         [emailTextField, passwordTextField].forEach { view in
             authorizationStackView.addArrangedSubview(view)
         }
-
+        
+        [authorizationLabel, baseLabel].forEach { view in
+            labelStackView.addArrangedSubview(view)
+        }
     }
-    
-
     
     private func setupTextField() {
         
@@ -74,7 +86,12 @@ class AuthorizationViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             
-            authorizationStackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+            labelStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 25),
+            labelStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            labelStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            labelStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            
+            authorizationStackView.topAnchor.constraint(equalTo: labelStackView.bottomAnchor, constant: 56),
             authorizationStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             authorizationStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             authorizationStackView.heightAnchor.constraint(equalToConstant: 112),
