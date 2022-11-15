@@ -26,11 +26,14 @@ class AuthorizationViewController: UIViewController {
 
         setupView()
         setConstaints()
+        setupTextField()
+        
+        tabBarController?.tabBar.isHidden = true
+        
     }
     
     private func setupView() {
-        //view.addSubview(emailTextField)
-        //view.addSubview(passwordTextField)
+        
         view.addSubview(authorizationStackView)
         
         emailTextField.delegate = self
@@ -39,7 +42,32 @@ class AuthorizationViewController: UIViewController {
         [emailTextField, passwordTextField].forEach { view in
             authorizationStackView.addArrangedSubview(view)
         }
+
+    }
+    
+
+    
+    private func setupTextField() {
         
+        let toolbar = UIToolbar()
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace,
+                                        target: nil,
+                                        action: nil)
+        let doneButton = UIBarButtonItem(title: "Done",
+                                         style: .done,
+                                         target: self,
+                                         action: #selector(dismissKeyboard))
+                    
+        toolbar.setItems([flexSpace, doneButton], animated: true)
+        toolbar.sizeToFit()
+                    
+        emailTextField.inputAccessoryView = toolbar
+        passwordTextField.inputAccessoryView = toolbar
+        
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     private func setConstaints() {
@@ -52,9 +80,15 @@ class AuthorizationViewController: UIViewController {
             authorizationStackView.heightAnchor.constraint(equalToConstant: 112),
             
         ])
-        
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        dismissKeyboard()
+        
+        }
 }
+
 
 extension AuthorizationViewController: UITextFieldDelegate {
     
