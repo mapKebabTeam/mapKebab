@@ -80,6 +80,7 @@ class WelcomeViewController: UIViewController {
         
         setupView()
         setConstraints()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -96,6 +97,8 @@ class WelcomeViewController: UIViewController {
         let authorizationViewController = AuthorizationViewController()
         authorizationViewController.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(authorizationViewController, animated: true)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", image: nil, target: self, action: nil)
+        navigationItem.backBarButtonItem?.tintColor = #colorLiteral(red: 0.6887677908, green: 0.6887677312, blue: 0.6887677312, alpha: 1)
     }
     
     private func setupView() {

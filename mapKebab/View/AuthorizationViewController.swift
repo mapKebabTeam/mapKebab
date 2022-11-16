@@ -158,12 +158,16 @@ class AuthorizationViewController: UIViewController {
         let passwordRecoveryViewController = PasswordRecoveryViewController()
         passwordRecoveryViewController.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(passwordRecoveryViewController, animated: true)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", image: nil, target: self, action: nil)
+        navigationItem.backBarButtonItem?.tintColor = #colorLiteral(red: 0.6887677908, green: 0.6887677312, blue: 0.6887677312, alpha: 1)
     }
     
     @objc func createAccountButtonTapped() {
         let registrationViewController = RegistrationViewController()
         registrationViewController.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(registrationViewController, animated: true)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", image: nil, target: self, action: nil)
+        navigationItem.backBarButtonItem?.tintColor = #colorLiteral(red: 0.6887677908, green: 0.6887677312, blue: 0.6887677312, alpha: 1)
     }
 }
 

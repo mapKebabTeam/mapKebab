@@ -73,8 +73,8 @@
 				094588DA29225C8E0092125C /* WelcomeViewController.swift */,
 				639536B12923873200B15476 /* AuthorizationViewController.swift */,
 				639536B3292428DF00B15476 /* RegistrationViewController.swift */,
-				636C0ED9292173C000BDC8D5 /* Cell */,
 				6303AD2F2924E487000A4D00 /* PasswordRecoveryViewController.swift */,
+				636C0ED9292173C000BDC8D5 /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
