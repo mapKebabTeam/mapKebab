@@ -11,6 +11,7 @@
 		094588DD2923EB850092125C /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094588DC2923EB850092125C /* UITextField.swift */; };
 		094588E22924330A0092125C /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094588E12924330A0092125C /* UILabel.swift */; };
 		094588E4292433B10092125C /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094588E3292433B10092125C /* UIButton.swift */; };
+		09E6F39329268CF300F93B1B /* SheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E6F39229268CF300F93B1B /* SheetViewController.swift */; };
 		09FC31F6292029750080987D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FC31F5292029750080987D /* MapViewController.swift */; };
 		09FC31F8292029960080987D /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FC31F7292029960080987D /* FavoritesViewController.swift */; };
 		09FC31FA292029A10080987D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FC31F9292029A10080987D /* ProfileViewController.swift */; };
@@ -33,6 +34,7 @@
 		094588DC2923EB850092125C /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		094588E12924330A0092125C /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		094588E3292433B10092125C /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		09E6F39229268CF300F93B1B /* SheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetViewController.swift; sourceTree = "<group>"; };
 		09FC31F5292029750080987D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		09FC31F7292029960080987D /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		09FC31F9292029A10080987D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				639536B12923873200B15476 /* AuthorizationViewController.swift */,
 				639536B3292428DF00B15476 /* RegistrationViewController.swift */,
 				6303AD2F2924E487000A4D00 /* PasswordRecoveryViewController.swift */,
+				09E6F39229268CF300F93B1B /* SheetViewController.swift */,
 				636C0ED9292173C000BDC8D5 /* Cell */,
 			);
 			path = View;
@@ -256,6 +259,7 @@
 				094588DD2923EB850092125C /* UITextField.swift in Sources */,
 				63A7B1BF291FFEA8004FB023 /* AppDelegate.swift in Sources */,
 				636197CF29224BF90080E32C /* UIStackView.swift in Sources */,
+				09E6F39329268CF300F93B1B /* SheetViewController.swift in Sources */,
 				63A7B1C1291FFEA8004FB023 /* SceneDelegate.swift in Sources */,
 				636C0EDB292173EE00BDC8D5 /* FavoritiesCollectionViewCell.swift in Sources */,
 				4E86E75D2923AC7C00F99DEC /* UIImage.swift in Sources */,

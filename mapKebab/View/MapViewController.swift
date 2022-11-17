@@ -18,12 +18,24 @@ class MapViewController: UIViewController {
         return map
     }()
     
+    private var pointAnnotation : PointAnnotation = {
+        var point = PointAnnotation(coordinate: CLLocationCoordinate2D(latitude: 54.3181, longitude: 48.3837))
+        point.image = .init(image: UIImage.logo, name: "Kebab")
+        point.iconAnchor = .bottom
+        return point
+    }()
+    
+    private var pointAnnotationManager : PointAnnotationManager!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupView()
         setConstraints()
+        
+        pointAnnotationManager = mapView.annotations.makePointAnnotationManager()
+        pointAnnotationManager.annotations = [pointAnnotation]
         
     }
     

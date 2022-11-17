@@ -50,7 +50,6 @@ extension FavoritesViewController {
             favoritesCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
         ])
     }
-    
 }
 
 // - MARK: UITableViewDelegate
@@ -80,4 +79,11 @@ extension FavoritesViewController: UICollectionViewDataSource, UICollectionViewD
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let sheetViewController = SheetViewController(nibName: nil, bundle: nil)
+        present(sheetViewController, animated: true, completion: nil)
+    }
+    
 }
+
+
