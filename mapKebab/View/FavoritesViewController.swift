@@ -9,6 +9,8 @@ import UIKit
 
 class FavoritesViewController: UIViewController {
     
+    var places : [Places] = []
+    
     private let favoritesCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -26,6 +28,12 @@ class FavoritesViewController: UIViewController {
         setConstraints()
         
     }
+    
+    func getAllTasks() {
+            taskService.completeList(completion: { (status, tasks) in
+                print(status)
+            })
+        }
     
     private func setupView() {
         
@@ -70,11 +78,13 @@ extension FavoritesViewController: UICollectionViewDataSource, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return places.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: idFavoritiesCell, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: idFavoritiesCell, for: indexPath) as! FavoritiesCollectionViewCell
+        let place = places[indexPath.row]
+        //cell.set(place: place)
         cell.backgroundColor = .white
         return cell
     }

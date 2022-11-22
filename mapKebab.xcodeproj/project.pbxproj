@@ -11,6 +11,14 @@
 		094588DD2923EB850092125C /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094588DC2923EB850092125C /* UITextField.swift */; };
 		094588E22924330A0092125C /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094588E12924330A0092125C /* UILabel.swift */; };
 		094588E4292433B10092125C /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094588E3292433B10092125C /* UIButton.swift */; };
+		09E58518292BF92C00C115BA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09E58517292BF92C00C115BA /* GoogleService-Info.plist */; };
+		09E5851B292BFA9100C115BA /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 09E5851A292BFA9100C115BA /* FirebaseAnalytics */; };
+		09E5851D292BFA9100C115BA /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 09E5851C292BFA9100C115BA /* FirebaseAuth */; };
+		09E5851F292BFA9100C115BA /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 09E5851E292BFA9100C115BA /* FirebaseDatabase */; };
+		09E58521292BFA9100C115BA /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 09E58520292BFA9100C115BA /* FirebaseFirestore */; };
+		09E58523292BFA9100C115BA /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 09E58522292BFA9100C115BA /* FirebaseStorage */; };
+		09E58528292C048000C115BA /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E58527292C048000C115BA /* APIManager.swift */; };
+		09E5852A292C05E200C115BA /* Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E58529292C05E200C115BA /* Places.swift */; };
 		09E6F39329268CF300F93B1B /* SheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E6F39229268CF300F93B1B /* SheetViewController.swift */; };
 		09FC31F6292029750080987D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FC31F5292029750080987D /* MapViewController.swift */; };
 		09FC31F8292029960080987D /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FC31F7292029960080987D /* FavoritesViewController.swift */; };
@@ -34,6 +42,9 @@
 		094588DC2923EB850092125C /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		094588E12924330A0092125C /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		094588E3292433B10092125C /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		09E58517292BF92C00C115BA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		09E58527292C048000C115BA /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		09E58529292C05E200C115BA /* Places.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Places.swift; sourceTree = "<group>"; };
 		09E6F39229268CF300F93B1B /* SheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetViewController.swift; sourceTree = "<group>"; };
 		09FC31F5292029750080987D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		09FC31F7292029960080987D /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
@@ -58,13 +69,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09E5851B292BFA9100C115BA /* FirebaseAnalytics in Frameworks */,
+				09E5851D292BFA9100C115BA /* FirebaseAuth in Frameworks */,
+				09E5851F292BFA9100C115BA /* FirebaseDatabase in Frameworks */,
+				09E58521292BFA9100C115BA /* FirebaseFirestore in Frameworks */,
 				636C0ED82921421600BDC8D5 /* MapboxMaps in Frameworks */,
+				09E58523292BFA9100C115BA /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09E58526292C046600C115BA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				09E58527292C048000C115BA /* APIManager.swift */,
+				09E58529292C05E200C115BA /* Places.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		09FC31F0292006BF0080987D /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -89,13 +114,6 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		09FC31F2292007020080987D /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		09FC31F32920071A0080987D /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +126,7 @@
 		09FC31F4292007370080987D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				09E58517292BF92C00C115BA /* GoogleService-Info.plist */,
 				63A7B1CC291FFEAB004FB023 /* Info.plist */,
 				63A7B1C9291FFEAB004FB023 /* LaunchScreen.storyboard */,
 				63A7B1C7291FFEAB004FB023 /* Assets.xcassets */,
@@ -163,7 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				636197C82922492F0080E32C /* Extension */,
-				09FC31F2292007020080987D /* Model */,
+				09E58526292C046600C115BA /* Model */,
 				09FC31F1292006CD0080987D /* ViewModel */,
 				09FC31F0292006BF0080987D /* View */,
 				09FC31F4292007370080987D /* Resources */,
@@ -190,6 +209,11 @@
 			name = mapKebab;
 			packageProductDependencies = (
 				636C0ED72921421600BDC8D5 /* MapboxMaps */,
+				09E5851A292BFA9100C115BA /* FirebaseAnalytics */,
+				09E5851C292BFA9100C115BA /* FirebaseAuth */,
+				09E5851E292BFA9100C115BA /* FirebaseDatabase */,
+				09E58520292BFA9100C115BA /* FirebaseFirestore */,
+				09E58522292BFA9100C115BA /* FirebaseStorage */,
 			);
 			productName = appKebab;
 			productReference = 63A7B1BB291FFEA8004FB023 /* mapKebab.app */;
@@ -221,6 +245,7 @@
 			mainGroup = 63A7B1B2291FFEA8004FB023;
 			packageReferences = (
 				636C0ED62921421600BDC8D5 /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */,
+				09E58519292BFA9100C115BA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 63A7B1BC291FFEA8004FB023 /* Products */;
 			projectDirPath = "";
@@ -238,6 +263,7 @@
 			files = (
 				63A7B1CB291FFEAB004FB023 /* LaunchScreen.storyboard in Resources */,
 				63A7B1C8291FFEAB004FB023 /* Assets.xcassets in Resources */,
+				09E58518292BF92C00C115BA /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,8 +284,10 @@
 				63A7B1C3291FFEA8004FB023 /* MainTabBarController.swift in Sources */,
 				094588DD2923EB850092125C /* UITextField.swift in Sources */,
 				63A7B1BF291FFEA8004FB023 /* AppDelegate.swift in Sources */,
+				09E5852A292C05E200C115BA /* Places.swift in Sources */,
 				636197CF29224BF90080E32C /* UIStackView.swift in Sources */,
 				09E6F39329268CF300F93B1B /* SheetViewController.swift in Sources */,
+				09E58528292C048000C115BA /* APIManager.swift in Sources */,
 				63A7B1C1291FFEA8004FB023 /* SceneDelegate.swift in Sources */,
 				636C0EDB292173EE00BDC8D5 /* FavoritiesCollectionViewCell.swift in Sources */,
 				4E86E75D2923AC7C00F99DEC /* UIImage.swift in Sources */,
@@ -403,7 +431,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = CTY44DYVYJ;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = mapKebab/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -474,6 +502,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		09E58519292BFA9100C115BA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
 		636C0ED62921421600BDC8D5 /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/mapbox/mapbox-maps-ios.git";
@@ -485,6 +521,31 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		09E5851A292BFA9100C115BA /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 09E58519292BFA9100C115BA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		09E5851C292BFA9100C115BA /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 09E58519292BFA9100C115BA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		09E5851E292BFA9100C115BA /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 09E58519292BFA9100C115BA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		09E58520292BFA9100C115BA /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 09E58519292BFA9100C115BA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		09E58522292BFA9100C115BA /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 09E58519292BFA9100C115BA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
 		636C0ED72921421600BDC8D5 /* MapboxMaps */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 636C0ED62921421600BDC8D5 /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */;

@@ -19,12 +19,12 @@ class FavoritiesCollectionViewCell: UICollectionViewCell {
         return image
     }()
     
-    private let placeTitle = UILabel.boldTitle(text: "Name Kebab")
-    private let placeAdress = UILabel.graySecondary(text: "г. Ульяновск, ул. Гончарова, 31")
-    private let firstDayLabel = UILabel.graySecondary(text: "пн - пт")
-    private let secondDayLabel = UILabel.graySecondary(text: "сб - вс")
-    private let firstTimeLabel = UILabel.blackSecondary(text: "10:00 - 20:00")
-    private let secondTimeLabel = UILabel.blackSecondary(text: "12:00 - 01:00")
+    private let placeTitle = UILabel.boldTitle(text: "")
+    private let placeAdress = UILabel.graySecondary(text: "")
+    private let firstDayLabel = UILabel.graySecondary(text: "")
+    private let secondDayLabel = UILabel.graySecondary(text: "")
+    private let firstTimeLabel = UILabel.blackSecondary(text: "")
+    private let secondTimeLabel = UILabel.blackSecondary(text: "")
     
     private let firstStackView = UIStackView.setStackView(axis: .vertical, spacing: 2, distribution: .equalCentering)
     private let secondStackView = UIStackView.setStackView(axis: .vertical, spacing: 2, distribution: .equalCentering)
@@ -41,6 +41,23 @@ class FavoritiesCollectionViewCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func set(place : Places) {
+        placeTitle.text = place.name
+        placeAdress.text = place.adress
+        firstTimeLabel.text = place.workTime
+        secondTimeLabel.text = place.weekendWorkTime
+    }
+    
+    
+    
+//    func configureCell(name: String, adress: String, workTime: String, weekendWorkTime: String) {
+//        placeTitle.text = name
+//        placeAdress.text = adress
+//        firstTimeLabel.text = workTime
+//        secondTimeLabel.text = weekendWorkTime
+//    }
+    
     
     private func setupView() {
         
