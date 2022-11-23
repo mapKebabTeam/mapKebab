@@ -42,21 +42,12 @@ class FavoritiesCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func set(place : Places) {
-        placeTitle.text = place.name
-        placeAdress.text = place.adress
-        firstTimeLabel.text = place.workTime
-        secondTimeLabel.text = place.weekendWorkTime
+    func configureCell(name: String, adress: String, workTime: String, weekendWorkTime: String) {
+        placeTitle.text = name
+        placeAdress.text = adress
+        firstTimeLabel.text = workTime
+        secondTimeLabel.text = weekendWorkTime
     }
-    
-    
-    
-//    func configureCell(name: String, adress: String, workTime: String, weekendWorkTime: String) {
-//        placeTitle.text = name
-//        placeAdress.text = adress
-//        firstTimeLabel.text = workTime
-//        secondTimeLabel.text = weekendWorkTime
-//    }
     
     
     private func setupView() {

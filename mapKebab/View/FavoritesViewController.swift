@@ -6,10 +6,9 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
 class FavoritesViewController: UIViewController {
-    
-    var places : [Places] = []
     
     private let favoritesCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -20,6 +19,8 @@ class FavoritesViewController: UIViewController {
     }()
     
     private let idFavoritiesCell = "idFavoritiesCell"
+    
+    let places: [Places] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,13 +28,11 @@ class FavoritesViewController: UIViewController {
         setupView()
         setConstraints()
         
+        print(callAPI())
+        print(decodeAPI())
+
+        
     }
-    
-    func getAllTasks() {
-            taskService.completeList(completion: { (status, tasks) in
-                print(status)
-            })
-        }
     
     private func setupView() {
         
@@ -78,13 +77,11 @@ extension FavoritesViewController: UICollectionViewDataSource, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return places.count
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: idFavoritiesCell, for: indexPath) as! FavoritiesCollectionViewCell
-        let place = places[indexPath.row]
-        //cell.set(place: place)
         cell.backgroundColor = .white
         return cell
     }

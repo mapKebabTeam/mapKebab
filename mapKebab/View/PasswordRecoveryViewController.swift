@@ -9,25 +9,25 @@ import UIKit
 
 class PasswordRecoveryViewController: UIViewController {
     
-    // authorization label
+    // passwordRecovery label
     
     private let recoveryLabel = UILabel.mainTitle(text: "Password recovery", color: #colorLiteral(red: 0.2030155063, green: 0.2030155063, blue: 0.2030155063, alpha: 1))
     
     private let recoveryBaseLabel = UILabel.baseFont(text: "We will send you an email to reset your password", color: #colorLiteral(red: 0.6887677908, green: 0.6887677312, blue: 0.6887677312, alpha: 1))
     
-    // authorization textField
+    // passwordRecovery textField
     
     private let emailTextField = UITextField.setTextField(placeholder: "E-mail")
     
     
-    // authorization stackView
+    // passwordRecovery stackView
     
     
     private let firstStackView = UIStackView.setStackView(axis: .vertical, spacing: 6, distribution: .equalCentering)
     
     private let secondStackView = UIStackView.setStackView(axis: .vertical, spacing: 32, distribution: .fillEqually)
     
-    // authorization button
+    // passwordRecovery button
     
     private let reestablishButton: UIButton = {
         let button = UIButton.primaryButton(text: "Reestablish")

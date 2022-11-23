@@ -158,7 +158,6 @@ class WelcomeViewController: UIViewController {
             cell.separatorInset.left = tableView.bounds.width
         }
     }
-    
 }
 
 //Delegate&DataSource
