@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import FirebaseFirestore
+
 
 class FavoritesViewController: UIViewController {
     

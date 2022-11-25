@@ -16,8 +16,9 @@ struct Places: Codable {
 struct Place: Codable {
     let name: String
     let adress: String
+    let weekendWorkTime: String
+    let workTime: String
 }
-
 
 func callAPI() {
     guard let url = URL(string: "https://mapkebab-50224-default-rtdb.firebaseio.com/.json") else { return }
@@ -31,9 +32,9 @@ func callAPI() {
 func decodeAPI() {
     guard let url = URL(string: "https://mapkebab-50224-default-rtdb.firebaseio.com/places.json") else { return }
     
-    let task = URLSession.shared.dataTask(with: url){ data, response, error in
+    let task = URLSession.shared.dataTask(with: url) { data, response, error in
         let decoder = JSONDecoder()
-        if let data = data{
+        if let data = data {
             do {
                 let tasks = try decoder.decode(Places.self, from: data)
                 print(tasks)

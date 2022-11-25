@@ -35,7 +35,7 @@ class AuthorizationViewController: UIViewController {
     
     private let authorizationButton: UIButton = {
         let button = UIButton.primaryButton(text: "Sign In")
-//        button.addTarget(self, action: #selector(_), for: .touchUpInside)
+        button.addTarget(self, action: #selector(authorizationButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -65,11 +65,9 @@ class AuthorizationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = #colorLiteral(red: 0.9764705882, green: 0.9764705882, blue: 0.9764705882, alpha: 1)
 
         setupView()
-        setConstaints()
+        setConstraints()
         setupTextField()
         
         tabBarController?.tabBar.isHidden = true
@@ -78,6 +76,8 @@ class AuthorizationViewController: UIViewController {
     // funcs
     
     private func setupView() {
+        
+        view.backgroundColor = #colorLiteral(red: 0.9764705882, green: 0.9764705882, blue: 0.9764705882, alpha: 1)
         
         view.addSubview(authorizationTextFieldStackView)
         view.addSubview(authorizationLabelStackView)
@@ -97,7 +97,7 @@ class AuthorizationViewController: UIViewController {
         }
     }
     
-    private func setConstaints() {
+    private func setConstraints() {
         
         NSLayoutConstraint.activate([
             
@@ -168,6 +168,11 @@ class AuthorizationViewController: UIViewController {
         navigationController?.pushViewController(registrationViewController, animated: true)
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", image: nil, target: self, action: nil)
         navigationItem.backBarButtonItem?.tintColor = #colorLiteral(red: 0.6887677908, green: 0.6887677312, blue: 0.6887677312, alpha: 1)
+    }
+    
+    @objc func authorizationButtonTapped() {
+        let profileViewController = ProfileViewController()
+        navigationController?.pushViewController(profileViewController, animated: true)
     }
 }
 

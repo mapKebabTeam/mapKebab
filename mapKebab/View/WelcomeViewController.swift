@@ -103,7 +103,6 @@ class WelcomeViewController: UIViewController {
     
     private func setupView() {
         
-        title = "Profile"
         view.backgroundColor = #colorLiteral(red: 0.9813271165, green: 0.9813271165, blue: 0.9813271165, alpha: 1)
         
         view.addSubview(logoImage)

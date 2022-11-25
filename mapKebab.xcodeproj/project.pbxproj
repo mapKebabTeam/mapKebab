@@ -11,22 +11,16 @@
 		094588DD2923EB850092125C /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094588DC2923EB850092125C /* UITextField.swift */; };
 		094588E22924330A0092125C /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094588E12924330A0092125C /* UILabel.swift */; };
 		094588E4292433B10092125C /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094588E3292433B10092125C /* UIButton.swift */; };
-		09E5851B292BFA9100C115BA /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 09E5851A292BFA9100C115BA /* FirebaseAnalytics */; };
-		09E5851D292BFA9100C115BA /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 09E5851C292BFA9100C115BA /* FirebaseAuth */; };
-		09E5851F292BFA9100C115BA /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 09E5851E292BFA9100C115BA /* FirebaseDatabase */; };
-		09E58521292BFA9100C115BA /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 09E58520292BFA9100C115BA /* FirebaseFirestore */; };
-		09E58523292BFA9100C115BA /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 09E58522292BFA9100C115BA /* FirebaseStorage */; };
 		09E5852A292C05E200C115BA /* Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E58529292C05E200C115BA /* Places.swift */; };
 		09E6F39329268CF300F93B1B /* SheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E6F39229268CF300F93B1B /* SheetViewController.swift */; };
 		09FC31F6292029750080987D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FC31F5292029750080987D /* MapViewController.swift */; };
 		09FC31F8292029960080987D /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FC31F7292029960080987D /* FavoritesViewController.swift */; };
-		09FC31FA292029A10080987D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FC31F9292029A10080987D /* ProfileViewController.swift */; };
 		4E86E75D2923AC7C00F99DEC /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E86E75C2923AC7C00F99DEC /* UIImage.swift */; };
 		6303AD302924E487000A4D00 /* PasswordRecoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6303AD2F2924E487000A4D00 /* PasswordRecoveryViewController.swift */; };
 		636197CF29224BF90080E32C /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636197CE29224BF90080E32C /* UIStackView.swift */; };
 		636C0ED82921421600BDC8D5 /* MapboxMaps in Frameworks */ = {isa = PBXBuildFile; productRef = 636C0ED72921421600BDC8D5 /* MapboxMaps */; };
 		636C0EDB292173EE00BDC8D5 /* FavoritiesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636C0EDA292173EE00BDC8D5 /* FavoritiesCollectionViewCell.swift */; };
-		637891A7292E7F5200AFD620 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 637891A6292E7F5200AFD620 /* GoogleService-Info.plist */; };
+		637891A9292FEA5000AFD620 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637891A8292FEA5000AFD620 /* ProfileViewController.swift */; };
 		639536B22923873200B15476 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639536B12923873200B15476 /* AuthorizationViewController.swift */; };
 		639536B4292428DF00B15476 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639536B3292428DF00B15476 /* RegistrationViewController.swift */; };
 		63A7B1BF291FFEA8004FB023 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A7B1BE291FFEA8004FB023 /* AppDelegate.swift */; };
@@ -45,12 +39,11 @@
 		09E6F39229268CF300F93B1B /* SheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetViewController.swift; sourceTree = "<group>"; };
 		09FC31F5292029750080987D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		09FC31F7292029960080987D /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
-		09FC31F9292029A10080987D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		4E86E75C2923AC7C00F99DEC /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		6303AD2F2924E487000A4D00 /* PasswordRecoveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryViewController.swift; sourceTree = "<group>"; };
 		636197CE29224BF90080E32C /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
 		636C0EDA292173EE00BDC8D5 /* FavoritiesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritiesCollectionViewCell.swift; sourceTree = "<group>"; };
-		637891A6292E7F5200AFD620 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		637891A8292FEA5000AFD620 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		639536B12923873200B15476 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		639536B3292428DF00B15476 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		63A7B1BB291FFEA8004FB023 /* mapKebab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mapKebab.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,12 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09E5851B292BFA9100C115BA /* FirebaseAnalytics in Frameworks */,
-				09E5851D292BFA9100C115BA /* FirebaseAuth in Frameworks */,
-				09E5851F292BFA9100C115BA /* FirebaseDatabase in Frameworks */,
-				09E58521292BFA9100C115BA /* FirebaseFirestore in Frameworks */,
 				636C0ED82921421600BDC8D5 /* MapboxMaps in Frameworks */,
-				09E58523292BFA9100C115BA /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,12 +81,12 @@
 				63A7B1C2291FFEA8004FB023 /* MainTabBarController.swift */,
 				09FC31F5292029750080987D /* MapViewController.swift */,
 				09FC31F7292029960080987D /* FavoritesViewController.swift */,
-				09FC31F9292029A10080987D /* ProfileViewController.swift */,
 				094588DA29225C8E0092125C /* WelcomeViewController.swift */,
 				639536B12923873200B15476 /* AuthorizationViewController.swift */,
 				639536B3292428DF00B15476 /* RegistrationViewController.swift */,
 				6303AD2F2924E487000A4D00 /* PasswordRecoveryViewController.swift */,
 				09E6F39229268CF300F93B1B /* SheetViewController.swift */,
+				637891A8292FEA5000AFD620 /* ProfileViewController.swift */,
 				636C0ED9292173C000BDC8D5 /* Cell */,
 			);
 			path = View;
@@ -123,7 +111,6 @@
 		09FC31F4292007370080987D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				637891A6292E7F5200AFD620 /* GoogleService-Info.plist */,
 				63A7B1CC291FFEAB004FB023 /* Info.plist */,
 				63A7B1C9291FFEAB004FB023 /* LaunchScreen.storyboard */,
 				63A7B1C7291FFEAB004FB023 /* Assets.xcassets */,
@@ -206,11 +193,6 @@
 			name = mapKebab;
 			packageProductDependencies = (
 				636C0ED72921421600BDC8D5 /* MapboxMaps */,
-				09E5851A292BFA9100C115BA /* FirebaseAnalytics */,
-				09E5851C292BFA9100C115BA /* FirebaseAuth */,
-				09E5851E292BFA9100C115BA /* FirebaseDatabase */,
-				09E58520292BFA9100C115BA /* FirebaseFirestore */,
-				09E58522292BFA9100C115BA /* FirebaseStorage */,
 			);
 			productName = appKebab;
 			productReference = 63A7B1BB291FFEA8004FB023 /* mapKebab.app */;
@@ -242,7 +224,6 @@
 			mainGroup = 63A7B1B2291FFEA8004FB023;
 			packageReferences = (
 				636C0ED62921421600BDC8D5 /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */,
-				09E58519292BFA9100C115BA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 63A7B1BC291FFEA8004FB023 /* Products */;
 			projectDirPath = "";
@@ -260,7 +241,6 @@
 			files = (
 				63A7B1CB291FFEAB004FB023 /* LaunchScreen.storyboard in Resources */,
 				63A7B1C8291FFEAB004FB023 /* Assets.xcassets in Resources */,
-				637891A7292E7F5200AFD620 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,9 +255,9 @@
 				639536B22923873200B15476 /* AuthorizationViewController.swift in Sources */,
 				094588DB29225C8E0092125C /* WelcomeViewController.swift in Sources */,
 				094588E22924330A0092125C /* UILabel.swift in Sources */,
-				09FC31FA292029A10080987D /* ProfileViewController.swift in Sources */,
 				639536B4292428DF00B15476 /* RegistrationViewController.swift in Sources */,
 				094588E4292433B10092125C /* UIButton.swift in Sources */,
+				637891A9292FEA5000AFD620 /* ProfileViewController.swift in Sources */,
 				63A7B1C3291FFEA8004FB023 /* MainTabBarController.swift in Sources */,
 				094588DD2923EB850092125C /* UITextField.swift in Sources */,
 				63A7B1BF291FFEA8004FB023 /* AppDelegate.swift in Sources */,
@@ -498,14 +478,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		09E58519292BFA9100C115BA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 9.0.0;
-			};
-		};
 		636C0ED62921421600BDC8D5 /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/mapbox/mapbox-maps-ios.git";
@@ -517,31 +489,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		09E5851A292BFA9100C115BA /* FirebaseAnalytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 09E58519292BFA9100C115BA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalytics;
-		};
-		09E5851C292BFA9100C115BA /* FirebaseAuth */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 09E58519292BFA9100C115BA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAuth;
-		};
-		09E5851E292BFA9100C115BA /* FirebaseDatabase */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 09E58519292BFA9100C115BA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseDatabase;
-		};
-		09E58520292BFA9100C115BA /* FirebaseFirestore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 09E58519292BFA9100C115BA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFirestore;
-		};
-		09E58522292BFA9100C115BA /* FirebaseStorage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 09E58519292BFA9100C115BA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseStorage;
-		};
 		636C0ED72921421600BDC8D5 /* MapboxMaps */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 636C0ED62921421600BDC8D5 /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */;
