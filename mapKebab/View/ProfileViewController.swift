@@ -35,7 +35,7 @@ class ProfileViewController: UIViewController {
     
     private let buttonAddPhoto: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(systemName: "person.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: CGFloat(20))), for: .normal)
+        button.setImage(UIImage(systemName: "person.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: CGFloat(40))), for: .normal)
         button.tintColor = #colorLiteral(red: 0.9803921569, green: 0.4980392157, blue: 0.2235294118, alpha: 1)
         button.backgroundColor = #colorLiteral(red: 0.9835832715, green: 0.8832899928, blue: 0.8271723986, alpha: 1)
         button.layer.cornerRadius = 60
@@ -79,7 +79,7 @@ class ProfileViewController: UIViewController {
     }
     
     @objc fileprivate func profileImageButtonTapped() {
-        
+        showImagePickerControllerActionSheet()
     }
     
     // MARK
@@ -141,7 +141,19 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    
+    func showImagePickerControllerActionSheet() {
+        let photoLibraryAction = UIAlertAction(title: "Choose from library", style: .default)
+        { (action) in
+            self.showImagePickerContoller(sourceType: .photoLibrary)
+        }
+        let cameraAction = UIAlertAction(title: "Take from Camera", style: .default)
+        { (action) in
+            self.showImagePickerContoller(sourceType: .camera)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        AlertService.showAlert(style: .actionSheet, title: "Choose your image", message: nil, actions: [photoLibraryAction, cameraAction, cancelAction])
+    }
     
     func showImagePickerContoller(sourceType: UIImagePickerController.SourceType) {
         let imagePickerController = UIImagePickerController()
