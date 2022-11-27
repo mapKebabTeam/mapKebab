@@ -25,7 +25,24 @@ class AddPlaceViewController: UIViewController {
     private let placeTextFieldStackView = UIStackView.setStackView(axis: .vertical, spacing: 16, distribution: .fillEqually)
     
     // add time works
-    private let datePickerWorksDays = UITextField.setTextField(placeholder: "00:00")
+    private let firstDatePickerTitle = UILabel.baseFont(text: "Working hours on weekdays", color: #colorLiteral(red: 0.2030155063, green: 0.2030155063, blue: 0.2030155063, alpha: 1))
+    private let secondDatePickerTitle = UILabel.baseFont(text: "Opening hours on weekends", color: #colorLiteral(red: 0.2030155063, green: 0.2030155063, blue: 0.2030155063, alpha: 1))
+    private let datePickerFirstWorksDays = UITextField.setTextField(placeholder: "00:00")
+    private let datePickerSecondWorksDays = UITextField.setTextField(placeholder: "00:00")
+    private let datePickerFirstWeekendDays = UITextField.setTextField(placeholder: "00:00")
+    private let datePickerSecondWeekendDays = UITextField.setTextField(placeholder: "00:00")
+    
+//    private let timeArray = [datePickerFirstWorksDays, datePickerSecondWorksDays, datePickerFirstWeekendDays, datePickerSecondWeekendDays]
+    
+    private let worksDayStackView = UIStackView.setStackView(axis: .horizontal, spacing: 12, distribution: .fillEqually)
+    
+    private let worksWeekendStackView = UIStackView.setStackView(axis: .horizontal, spacing: 12, distribution: .fillEqually)
+    
+    private let fullFirstStackView = UIStackView.setStackView(axis: .vertical, spacing: 6, distribution: .fillProportionally)
+    private let fullSecondStackView = UIStackView.setStackView(axis: .vertical, spacing: 6, distribution: .fillProportionally)
+    
+//    private let finalStackViewDataPicker = UIStackView.setStackView(axis: .vertical, spacing: 16, distribution: .fillProportionally)
+    
     
     private let addPlaceButton: UIButton = {
         let button = UIButton.primaryButton(text: "Add an establishment")
@@ -88,7 +105,8 @@ class AddPlaceViewController: UIViewController {
         view.addSubview(addPlaceButton)
         view.addSubview(addPlacePhotoButton)
         view.addSubview(addPlaceEmptyPhoto)
-        view.addSubview(datePickerWorksDays)
+        view.addSubview(fullFirstStackView)
+        view.addSubview(fullSecondStackView)
         
         namePlaceTextField.delegate = self
         adressPlaceTextField.delegate = self
@@ -100,6 +118,26 @@ class AddPlaceViewController: UIViewController {
         [namePlaceTextField, adressPlaceTextField,].forEach { view in
             placeTextFieldStackView.addArrangedSubview(view)
         }
+        
+        [datePickerFirstWorksDays, datePickerSecondWorksDays].forEach { view in
+            worksDayStackView.addArrangedSubview(view)
+        }
+        
+        [datePickerFirstWeekendDays, datePickerSecondWeekendDays].forEach { view in
+            worksWeekendStackView.addArrangedSubview(view)
+        }
+        
+        [firstDatePickerTitle, worksDayStackView].forEach{ view in
+            fullFirstStackView.addArrangedSubview(view)
+        }
+        
+        [secondDatePickerTitle, worksWeekendStackView].forEach{ view in
+            fullFirstStackView.addArrangedSubview(view)
+        }
+        
+//        [fullFirstStackView, fullSecondStackView].forEach { view in
+//            finalStackViewDataPicker.addArrangedSubview(view)
+//        }
     }
     
     private func setConstraints() {
@@ -131,10 +169,20 @@ class AddPlaceViewController: UIViewController {
             addPlaceEmptyPhoto.heightAnchor.constraint(equalToConstant: 206),
             addPlaceEmptyPhoto.widthAnchor.constraint(equalToConstant: 358),
             
-            datePickerWorksDays.topAnchor.constraint(equalTo: placeTextFieldStackView.bottomAnchor, constant: 16),
-            datePickerWorksDays.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            datePickerWorksDays.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 16),
-            datePickerWorksDays.heightAnchor.constraint(equalToConstant: 48),
+            fullFirstStackView.topAnchor.constraint(equalTo: placeTextFieldStackView.bottomAnchor, constant: 16),
+            fullFirstStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            fullFirstStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            fullFirstStackView.heightAnchor.constraint(equalToConstant: 72),
+            
+            fullSecondStackView.topAnchor.constraint(equalTo: fullFirstStackView.bottomAnchor, constant: 16),
+            fullSecondStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            fullSecondStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            fullSecondStackView.heightAnchor.constraint(equalToConstant: 72),
+            
+//            finalStackViewDataPicker.topAnchor.constraint(equalTo: placeTextFieldStackView.bottomAnchor, constant: 16),
+//            finalStackViewDataPicker.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+//            finalStackViewDataPicker.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+//            finalStackViewDataPicker.heightAnchor.constraint(equalToConstant: 160),
         
         ])
     }
@@ -142,16 +190,16 @@ class AddPlaceViewController: UIViewController {
     private func createDatePicker() {
         datePicker.preferredDatePickerStyle = .wheels
         datePicker.datePickerMode = .time
-        datePickerWorksDays.textAlignment = .center
-        datePickerWorksDays.inputView = datePicker
-        datePickerWorksDays.inputAccessoryView = createToolBar
+        datePickerFirstWorksDays.textAlignment = .center
+        datePickerFirstWorksDays.inputView = datePicker
+        datePickerFirstWorksDays.inputAccessoryView = createToolBar
     }
     
     @objc private func donePressed() {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .none
         dateFormatter.timeStyle = .short
-        self.datePickerWorksDays.text = dateFormatter.string(from: datePicker.date)
+        self.datePickerFirstWorksDays.text = dateFormatter.string(from: datePicker.date)
         self.view.endEditing(true)
     }
     
