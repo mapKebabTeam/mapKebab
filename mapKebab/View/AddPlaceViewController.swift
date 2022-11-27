@@ -43,9 +43,6 @@ class AddPlaceViewController: UIViewController {
     private let worksDayStackView = UIStackView.setStackView(axis: .horizontal, spacing: 12, distribution: .fillEqually)
     private let worksWeekendStackView = UIStackView.setStackView(axis: .horizontal, spacing: 12, distribution: .fillEqually)
     
-    private let fullFirstStackView = UIStackView.setStackView(axis: .vertical, spacing: 6, distribution: .fillProportionally)
-    private let fullSecondStackView = UIStackView.setStackView(axis: .vertical, spacing: 6, distribution: .fillProportionally)
-    
     private let addPlaceButton: UIButton = {
         let button = UIButton.primaryButton(text: "Add an establishment")
         button.addTarget(self, action: #selector(addPlaceButtonTapped), for: .touchUpInside)
@@ -184,19 +181,30 @@ class AddPlaceViewController: UIViewController {
     }
     //MARK: - Func for DatePicker
     private func createDatePicker() {
+        
+        let dateTextFieldArray = [datePickerFirstWorksDays, datePickerSecondWorksDays, datePickerFirstWeekendDays, datePickerSecondWeekendDays]
+        
         datePicker.preferredDatePickerStyle = .wheels
         datePicker.datePickerMode = .time
-        datePickerFirstWorksDays.textAlignment = .center
-        datePickerFirstWorksDays.inputView = datePicker
-        datePickerFirstWorksDays.inputAccessoryView = createToolBar
+        
+        for tf in dateTextFieldArray {
+            tf.textAlignment = .center
+            tf.inputView = datePicker
+            tf.inputAccessoryView = createToolBar
+        }
+//        datePickerFirstWorksDays.textAlignment = .center
+//        datePickerFirstWorksDays.inputView = datePicker
+//        datePickerFirstWorksDays.inputAccessoryView = createToolBar
     }
     
     @objc private func donePressed() {
+        
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .none
         dateFormatter.timeStyle = .short
         self.datePickerFirstWorksDays.text = dateFormatter.string(from: datePicker.date)
         self.view.endEditing(true)
+
     }
     
     private func setupTextField() {
