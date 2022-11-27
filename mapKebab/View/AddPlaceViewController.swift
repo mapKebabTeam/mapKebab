@@ -9,23 +9,23 @@ import UIKit
 
 class AddPlaceViewController: UIViewController {
     
+    private let imageAddPhoto = UIImage(systemName: "photo", withConfiguration: UIImage.SymbolConfiguration(pointSize: CGFloat(32)))
+    //private let labelAddPhoto
+    
     // add place label
-    
     private let addPlaceLabel = UILabel.mainTitle(text: "New establishment", color: #colorLiteral(red: 0.2030155063, green: 0.2030155063, blue: 0.2030155063, alpha: 1))
-    
     private let addPlaceBaseLabel = UILabel.baseFont(text: "Add a new establishment to the map for users.", color: #colorLiteral(red: 0.6887677908, green: 0.6887677312, blue: 0.6887677312, alpha: 1))
     
     // add place textField
-    
     private let namePlaceTextField = UITextField.setTextField(placeholder: "Institution name")
-    
     private let adressPlaceTextField = UITextField.setTextField(placeholder: "Address")
     
     // add place stackView
-    
     private let placeLabelStackView = UIStackView.setStackView(axis: .vertical, spacing: 6, distribution: .equalCentering)
-    
     private let placeTextFieldStackView = UIStackView.setStackView(axis: .vertical, spacing: 16, distribution: .fillEqually)
+    
+    // add time works
+    private let datePickerWorksDays = UITextField.setTextField(placeholder: "00:00")
     
     private let addPlaceButton: UIButton = {
         let button = UIButton.primaryButton(text: "Add an establishment")
@@ -42,15 +42,29 @@ class AddPlaceViewController: UIViewController {
     
     private let addPlacePhotoButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = #colorLiteral(red: 0.9254901961, green: 0.9254901961, blue: 0.9254901961, alpha: 1)
-        button.setImage(UIImage(systemName: "photo", withConfiguration: UIImage.SymbolConfiguration(pointSize: CGFloat(40))), for: .normal)
-        button.setTitle("Add photo", for: .normal)
-        button.setTitleColor(#colorLiteral(red: 0.6887677908, green: 0.6887677312, blue: 0.6887677312, alpha: 1), for: .normal)
+        button.configuration = .tinted()
+        button.configuration?.image = UIImage(systemName: "photo", withConfiguration: UIImage.SymbolConfiguration(pointSize: 26))
+        button.configuration?.title = "Add a photo"
+        button.configuration?.imagePadding = 12
+        button.configuration?.imagePlacement = .top
         button.tintColor = #colorLiteral(red: 0.6887677908, green: 0.6887677312, blue: 0.6887677312, alpha: 1)
+        button.clipsToBounds = true
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(addPlacePhotoButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
+    }()
+    
+    private let datePicker = UIDatePicker()
+    
+    private let createToolBar: UIToolbar = {
+        //toolbar
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        //done button
+        let doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
+        toolbar.setItems([doneBtn], animated: true)
+        return toolbar
     }()
 
     override func viewDidLoad() {
@@ -61,11 +75,11 @@ class AddPlaceViewController: UIViewController {
         setupView()
         setConstraints()
         setupTextField()
-        
+        upKeyboard()
+        createDatePicker()
     }
     
     private func setupView() {
-        
         
         view.backgroundColor = #colorLiteral(red: 0.9764705882, green: 0.9764705882, blue: 0.9764705882, alpha: 1)
         
@@ -74,6 +88,10 @@ class AddPlaceViewController: UIViewController {
         view.addSubview(addPlaceButton)
         view.addSubview(addPlacePhotoButton)
         view.addSubview(addPlaceEmptyPhoto)
+        view.addSubview(datePickerWorksDays)
+        
+        namePlaceTextField.delegate = self
+        adressPlaceTextField.delegate = self
         
         [addPlaceLabel, addPlaceBaseLabel].forEach { view in
             placeLabelStackView.addArrangedSubview(view)
@@ -111,13 +129,33 @@ class AddPlaceViewController: UIViewController {
             addPlaceEmptyPhoto.centerXAnchor.constraint(equalTo: addPlacePhotoButton.centerXAnchor),
             addPlaceEmptyPhoto.centerYAnchor.constraint(equalTo: addPlacePhotoButton.centerYAnchor),
             addPlaceEmptyPhoto.heightAnchor.constraint(equalToConstant: 206),
-            addPlaceEmptyPhoto.widthAnchor.constraint(equalToConstant: 358)
+            addPlaceEmptyPhoto.widthAnchor.constraint(equalToConstant: 358),
+            
+            datePickerWorksDays.topAnchor.constraint(equalTo: placeTextFieldStackView.bottomAnchor, constant: 16),
+            datePickerWorksDays.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            datePickerWorksDays.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 16),
+            datePickerWorksDays.heightAnchor.constraint(equalToConstant: 48),
         
         ])
     }
+    //MARK: - Func for DatePicker
+    private func createDatePicker() {
+        datePicker.preferredDatePickerStyle = .wheels
+        datePicker.datePickerMode = .time
+        datePickerWorksDays.textAlignment = .center
+        datePickerWorksDays.inputView = datePicker
+        datePickerWorksDays.inputAccessoryView = createToolBar
+    }
+    
+    @objc private func donePressed() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .none
+        dateFormatter.timeStyle = .short
+        self.datePickerWorksDays.text = dateFormatter.string(from: datePicker.date)
+        self.view.endEditing(true)
+    }
     
     private func setupTextField() {
-        
         let toolbar = UIToolbar()
         let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace,
                                         target: nil,
@@ -160,6 +198,15 @@ extension AddPlaceViewController: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         textField.layer.borderColor = UIColor.clear.cgColor
+    }
+    
+    func upKeyboard() {
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: nil) { (nc) in
+            self.view.frame.origin.y = -106
+        }
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: nil) { (nc) in
+            self.view.frame.origin.y = 0.0
+        }
     }
 }
 
