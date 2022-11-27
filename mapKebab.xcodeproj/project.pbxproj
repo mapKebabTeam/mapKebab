@@ -22,6 +22,7 @@
 		636C0ED82921421600BDC8D5 /* MapboxMaps in Frameworks */ = {isa = PBXBuildFile; productRef = 636C0ED72921421600BDC8D5 /* MapboxMaps */; };
 		636C0EDB292173EE00BDC8D5 /* FavoritiesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636C0EDA292173EE00BDC8D5 /* FavoritiesCollectionViewCell.swift */; };
 		637891A9292FEA5000AFD620 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637891A8292FEA5000AFD620 /* ProfileViewController.swift */; };
+		638AA329293389470075EA05 /* AddPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638AA328293389470075EA05 /* AddPlaceViewController.swift */; };
 		639536B22923873200B15476 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639536B12923873200B15476 /* AuthorizationViewController.swift */; };
 		639536B4292428DF00B15476 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639536B3292428DF00B15476 /* RegistrationViewController.swift */; };
 		63A7B1BF291FFEA8004FB023 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A7B1BE291FFEA8004FB023 /* AppDelegate.swift */; };
@@ -46,6 +47,7 @@
 		636197CE29224BF90080E32C /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
 		636C0EDA292173EE00BDC8D5 /* FavoritiesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritiesCollectionViewCell.swift; sourceTree = "<group>"; };
 		637891A8292FEA5000AFD620 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		638AA328293389470075EA05 /* AddPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceViewController.swift; sourceTree = "<group>"; };
 		639536B12923873200B15476 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		639536B3292428DF00B15476 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		63A7B1BB291FFEA8004FB023 /* mapKebab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mapKebab.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,6 +92,7 @@
 				09E6F39229268CF300F93B1B /* SheetViewController.swift */,
 				637891A8292FEA5000AFD620 /* ProfileViewController.swift */,
 				636C0ED9292173C000BDC8D5 /* Cell */,
+				638AA328293389470075EA05 /* AddPlaceViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				638AA329293389470075EA05 /* AddPlaceViewController.swift in Sources */,
 				6303AD302924E487000A4D00 /* PasswordRecoveryViewController.swift in Sources */,
 				639536B22923873200B15476 /* AuthorizationViewController.swift in Sources */,
 				094588DB29225C8E0092125C /* WelcomeViewController.swift in Sources */,

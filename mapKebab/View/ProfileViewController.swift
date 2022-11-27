@@ -13,7 +13,7 @@ class ProfileViewController: UIViewController {
     
     // MARK: - Create views for ProfileViewCintroller
     
-    private var namePerson = UILabel.mainTitle(text: "Example@gmail.com", color: #colorLiteral(red: 0.2030155063, green: 0.2030155063, blue: 0.2030155063, alpha: 1))
+    private var namePerson = UILabel.mainTitle(text: "example@gmail.com", color: #colorLiteral(red: 0.2030155063, green: 0.2030155063, blue: 0.2030155063, alpha: 1))
     
     private let profileBackgroundImageView: UIView = {
         let view = UIView()
@@ -53,6 +53,20 @@ class ProfileViewController: UIViewController {
         return table
     }()
     
+    private let addPlaceLabel: UILabel = {
+        let label = UILabel.baseFont(text: "Make the app better! \n Share new establishments.", color: #colorLiteral(red: 0.6887677908, green: 0.6887677312, blue: 0.6887677312, alpha: 1))
+        label.numberOfLines = 2
+        label.minimumScaleFactor = 0.5
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+       return label
+    }()
+    
+    private let addPlaceButton: UIButton = {
+        let button = UIButton.primaryButton(text: "Add new establishment")
+        button.addTarget(self, action: #selector(addPlaceButtonTapped), for: .touchUpInside)
+        return button
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -72,6 +86,8 @@ class ProfileViewController: UIViewController {
         profileBackgroundImageView.addSubview(buttonAddPhoto)
         view.addSubview(profileEmptyPhoto)
         view.addSubview(tableView)
+        view.addSubview(addPlaceLabel)
+        view.addSubview(addPlaceButton)
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -80,6 +96,14 @@ class ProfileViewController: UIViewController {
     
     @objc fileprivate func profileImageButtonTapped() {
         showImagePickerControllerActionSheet()
+    }
+    
+    @objc func addPlaceButtonTapped() {
+        let addPlaceViewController = AddPlaceViewController()
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", image: nil, target: self, action: nil)
+        navigationItem.backBarButtonItem?.tintColor = #colorLiteral(red: 0.6887677908, green: 0.6887677312, blue: 0.6887677312, alpha: 1)
+        addPlaceViewController.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(addPlaceViewController, animated: true)
     }
     
     // MARK
@@ -110,7 +134,15 @@ class ProfileViewController: UIViewController {
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-        
+            
+            addPlaceLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
+            addPlaceLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+            addPlaceLabel.bottomAnchor.constraint(equalTo: addPlaceButton.topAnchor, constant: -12),
+            
+            addPlaceButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            addPlaceButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            addPlaceButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -66),
+            addPlaceButton.heightAnchor.constraint(equalToConstant: 48)
         ])
         
     }
@@ -120,7 +152,7 @@ class ProfileViewController: UIViewController {
         config.text = table[indexPath.row]
         cell.contentConfiguration = config
         cell.accessoryType = .disclosureIndicator
-        if indexPath.row == table.count-1 {///убираем сепаратор с последней ячейки
+        if indexPath.row == table.count-1 {
             cell.separatorInset.left = tableView.bounds.width
         }
     }
@@ -176,3 +208,4 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
         dismiss(animated: true)
     }
 }
+
