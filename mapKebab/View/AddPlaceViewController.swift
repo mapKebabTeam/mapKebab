@@ -10,7 +10,6 @@ import UIKit
 class AddPlaceViewController: UIViewController {
     
     private let imageAddPhoto = UIImage(systemName: "photo", withConfiguration: UIImage.SymbolConfiguration(pointSize: CGFloat(32)))
-    //private let labelAddPhoto
     
     // add place label
     private let addPlaceLabel = UILabel.mainTitle(text: "New establishment", color: #colorLiteral(red: 0.2030155063, green: 0.2030155063, blue: 0.2030155063, alpha: 1))
@@ -187,14 +186,9 @@ class AddPlaceViewController: UIViewController {
         datePicker.preferredDatePickerStyle = .wheels
         datePicker.datePickerMode = .time
         
-        for tf in dateTextFieldArray {
-            tf.textAlignment = .center
-            tf.inputView = datePicker
-            tf.inputAccessoryView = createToolBar
-        }
-//        datePickerFirstWorksDays.textAlignment = .center
-//        datePickerFirstWorksDays.inputView = datePicker
-//        datePickerFirstWorksDays.inputAccessoryView = createToolBar
+        datePickerFirstWorksDays.textAlignment = .center
+        datePickerFirstWorksDays.inputView = datePicker
+        datePickerFirstWorksDays.inputAccessoryView = createToolBar
     }
     
     @objc private func donePressed() {
